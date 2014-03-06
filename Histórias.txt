@@ -1,0 +1,65 @@
+Histórias
+
+XP
+
+HU1. O Usuário pode se cadastrar
+
+	HU1C01 Cenário Cadastro
+		Usuário: 
+			Preenche os campos 
+			(nome de usuário, Endereço de e-mail, Senha, Nome completo e sexo)
+			("Ândrei Schuch", "andreirs@outlook.com", "*****", "...", "H")
+		Servidor:
+			Acessa o site e cria a conta para o usuário
+			Se o cadastro foi bem sucedido
+				Retornar mensagem de erro para o usuário
+				("Você foi cadastrado com sucesso. Acesse o seu e-mail para ativar a sua conta.")
+			Se o usuário/e-mail já existir
+				Retornar mensagem de erro para o usuário
+				("O usuário selecionado já está em uso.")
+	Término do HU1C01
+
+HU2. O Usuário pode se logar
+
+	HU2C01 Cenário Login
+		Sistema:
+			Apresenta os campos de login e senha
+		Usuário: Preenche os campos de login e senha
+			("andreirs", "******")
+		Sistema:
+			Autentica os dados preenchidos
+			Se o login foi bem sucedido
+				Apresenta a tela inicial do programa
+			Se ocorreu um erro durante o login
+				Retorna mensagem de erro para o usuário
+				("O usuário é inexistente ou os campos não foram preenchidos corretamente.")
+	Término do HU2C01
+
+HU3. O Usuário pode acessar salas
+
+	HU3C01 
+		Sistema:
+			Apresenta a tela inicial do programa com as salas que o usuário pode acessar
+				("Android",
+				 "Arduíno",
+				  "C/C++",
+			       "C#",
+				   "..."   )
+		Usuário:
+			Seleciona a sala que quer acessar
+		Sistema:
+			Adiciona o usuário na sala de bate-papo
+			Retorna a lista usuários on-line na sala contendo seus nomes e imagens
+			
+	Término do HU3C01
+	
+HU5. O usuário pode manter a sua lista de amigos
+
+	HU4C01 Cenário Adicionar Amigo
+		Sistema:
+			
+	Término do HU4C01
+	
+	HU4C02 Cenário Remover Amigo
+		
+	Término do HU4C02
