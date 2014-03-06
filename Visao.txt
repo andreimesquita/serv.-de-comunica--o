@@ -1,0 +1,29 @@
+Serv. de Comunicação
+
+XP
+
+Visão
+
+Problema
+--------
+	1. Dificuldade na comunicação de usuários do blog CodigoMestre.
+Envolvidos
+----------
+	Administrador
+	Usuário
+	Descrição de Persona
+	--------------------
+		-	O Administrador é o gestor do servidor e do banco de dados.
+		-	O Usuário é aquela pessoa inteligente que optou por instalar o nosso programa e 
+			facilitar a tirada de dúvidas diretamente com profissionais competentes, na sala de 
+			bate-papo.
+Características do Produto
+---------------
+	-	O sistema deve permitir o envio de mensagens para usuários que estão em determinadas
+	salas e mensagens privadas diretamente para os usuários.
+	-	O usuário entra na sala de bate-papo selecionada e visualiza a lista de .
+	-	O usuário pode editar informações no seu perfil.
+	-	O login deve utilizar os mesmos dados do blog.
+	-	Criar servidor (Sockets TCP/IP)
+	-	Criar banco de dados (PostgreSQL)
+	-	Desenvolver o software na linguagem de programação Java (Desktop)
