@@ -8,20 +8,24 @@ Problema
 Envolvidos
 ----------
 	Administrador
-	Usuário
+	Usuários do fórum
 	Descrição de Persona
 	--------------------
 		-	O Administrador é o gestor do servidor e do banco de dados.
-		-	O Usuário é aquela pessoa inteligente que optou por instalar o nosso programa e 
-			facilitar a tirada de dúvidas diretamente com profissionais competentes, na sala de 
+		-	O Usuário do fórum é aquela pessoa inteligente que optou por instalar o nosso programa 
+			e facilitar a tirada de dúvidas diretamente com profissionais competentes, na sala de 
 			bate-papo.
 Características do Produto
 ---------------
-	-	O sistema deve permitir o envio de mensagens para usuários que estão em determinadas
-	salas e mensagens privadas diretamente para os usuários.
-	-	O usuário entra na sala de bate-papo selecionada e visualiza a lista de .
-	-	O usuário pode editar informações no seu perfil.
-	-	O login deve utilizar os mesmos dados do blog.
+	-	O sistema permite a criação de salas de bate-papo.
+	-	O sistema permite que os usuário acessem as salas de bate-papo (uma por vez) e visualize
+		quem está on-line na sala.
+	-	O sistema permite que os usuários do fórum se cadastrem.
+	-	O sistema permite que os usuários do fórum façam login integrado ao fórum.
+	-	O sistema permite que os usuários do fórum visualize os demais usuários on-line.
+	-	O sistema permite que os usuários do fórum mantenham (CRUD) amigos em sua lista de amigos.
+	-	O sistema permite que os usuários enviem mensagens privadas para seus amigos.
+	-	O sistema permite que os usuários possam editar informações do seu perfil.
 	-	Criar servidor (Sockets TCP/IP)
 	-	Criar banco de dados (PostgreSQL)
 	-	Desenvolver o software na linguagem de programação Java (Desktop)
