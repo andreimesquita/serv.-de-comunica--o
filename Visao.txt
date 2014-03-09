@@ -4,28 +4,27 @@ Visão
 
 Problema
 --------
-	1. Dificuldade na comunicação de usuários do blog CodigoMestre.
+	1. Demora para responder as perguntas no fórum; demora para tirar dúvidas
 Envolvidos
 ----------
-	Administrador
-	Usuários do fórum
-	Descrição de Persona
-	--------------------
+	1. Administrador
+	2. Usuário do fórum
+	Descrição
+	---------
 		-	O Administrador é o gestor do servidor e do banco de dados.
-		-	O Usuário do fórum é aquela pessoa inteligente que optou por instalar o nosso programa 
-			e facilitar a tirada de dúvidas diretamente com profissionais competentes, na sala de 
+		-	O Usuário do fórum é aquela pessoa inteligente que optou por instalar o nosso programa
+			e facilitar a tirada de dúvidas diretamente com profissionais competentes, nas salas de 
 			bate-papo.
+Características do Sistema
+--------------------------
+	Usuários entram em salas de bate-papo
+	Usuários veem usuários que estão na sala
+	Cadastro/Login é integrado com o fórum
+	Adicionar e remover amigos na Lista de Amigos
+	Envio de mensagens privadas (amigos) e públicas (sala)
 Características do Produto
----------------
-	-	O sistema permite a criação de salas de bate-papo.
-	-	O sistema permite que os usuário acessem as salas de bate-papo (uma por vez) e visualize
-		quem está on-line na sala.
-	-	O sistema permite que os usuários do fórum se cadastrem.
-	-	O sistema permite que os usuários do fórum façam login integrado ao fórum.
-	-	O sistema permite que os usuários do fórum visualize os demais usuários on-line.
-	-	O sistema permite que os usuários do fórum mantenham (CRUD) amigos em sua lista de amigos.
-	-	O sistema permite que os usuários enviem mensagens privadas para seus amigos.
-	-	O sistema permite que os usuários possam editar informações do seu perfil.
-	-	Criar servidor (Sockets TCP/IP)
-	-	Criar banco de dados (PostgreSQL)
-	-	Desenvolver o software na linguagem de programação Java (Desktop)
+--------------------------
+- Java
+- Sockets TCP/IP
+- PostgreSQL (banco de dados)
+- JSoup (integração web)

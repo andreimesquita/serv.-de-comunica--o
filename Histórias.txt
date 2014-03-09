@@ -5,61 +5,32 @@ XP
 HU1. O Usuário pode se cadastrar
 
 	HU1C01 Cenário Cadastro
-		Usuário: 
-			Preenche os campos 
-			(nome de usuário, Endereço de e-mail, Senha, Nome completo e sexo)
+		Sistema:
+			Apresenta a tela de cadastro contendo os campos: nome de usuário, endereço de e-mail,
+			senha, nome completo e sexo (H ou M)
+		Usuário:
+			Preenche os campos com seus dados
 			("Ândrei Schuch", "andreirs@outlook.com", "*****", "...", "H")
 		Servidor:
-			Acessa o site e cria a conta para o usuário
+			Acessa o site e cadastra o usuário
 			Se o cadastro foi bem sucedido
-				Retornar mensagem de erro para o usuário
+				Apresentar mensagem de erro para o usuário
 				("Você foi cadastrado com sucesso. Acesse o seu e-mail para ativar a sua conta.")
+				Retorna para o início
 			Se o usuário/e-mail já existir
 				Retornar mensagem de erro para o usuário
 				("O usuário selecionado já está em uso.")
 	Término do HU1C01
-
-HU2. O Usuário pode se logar
-
-	HU2C01 Cenário Login
-		Sistema:
-			Apresenta os campos de login e senha
-		Usuário: Preenche os campos de login e senha
-			("andreirs", "******")
-		Sistema:
-			Autentica os dados preenchidos
-			Se o login foi bem sucedido
-				Apresenta a tela inicial do programa
-			Se ocorreu um erro durante o login
-				Retorna mensagem de erro para o usuário
-				("O usuário é inexistente ou os campos não foram preenchidos corretamente.")
-	Término do HU2C01
-
-HU3. O Usuário pode acessar salas
-
-	HU3C01 
-		Sistema:
-			Apresenta a tela inicial do programa com as salas que o usuário pode acessar
-				("Android",
-				 "Arduíno",
-				  "C/C++",
-			       "C#",
-				   "..."   )
-		Usuário:
-			Seleciona a sala que quer acessar
-		Sistema:
-			Adiciona o usuário na sala de bate-papo
-			Retorna a lista usuários on-line na sala contendo seus nomes e imagens
-			
-	Término do HU3C01
-	
-HU5. O usuário pode manter a sua lista de amigos
-
-	HU4C01 Cenário Adicionar Amigo
-		Sistema:
-			
-	Término do HU4C01
-	
-	HU4C02 Cenário Remover Amigo
-		
-	Término do HU4C02
+HUX. O usuário pode enviar mensagem
+	HUXC01 Cenário envio de mensagem pública (sala)
+	HUXC02 Cenário envio de mensagem privada para amigos	
+HUX. O usuário pode adicionar e remover amigos
+	HUXC01 Cenário adicionar amigo
+	HUXC02 Cenário remover amigo
+HUX. O usuário pode entrar e sair de uma sala de bate-papo
+	HUXC01 
+HUX. O usuário pode visualizar o seu perfil e o de outros usuários
+	HUXC01 
+HUX. O administrador pode enviar mensagens coletivas
+HUX. O administrador pode ativar e desativar o servidor
+HUX. O administrador pode listar os usuários
