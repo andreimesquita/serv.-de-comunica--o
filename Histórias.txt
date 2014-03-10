@@ -2,35 +2,90 @@ Histórias
 
 XP
 
-HU1. O Usuário pode se cadastrar
+	|USUÁRIO|
 
-	HU1C01 Cenário Cadastro
-		Sistema:
-			Apresenta a tela de cadastro contendo os campos: nome de usuário, endereço de e-mail,
-			senha, nome completo e sexo (H ou M)
+HU1. Como usuário eu devo poder me cadastrar no sistema
+
+	HU1C01 Cenário normal de sucesso
 		Usuário:
-			Preenche os campos com seus dados
-			("Ândrei Schuch", "andreirs@outlook.com", "*****", "...", "H")
-		Servidor:
-			Acessa o site e cadastra o usuário
-			Se o cadastro foi bem sucedido
-				Apresentar mensagem de erro para o usuário
-				("Você foi cadastrado com sucesso. Acesse o seu e-mail para ativar a sua conta.")
-				Retorna para o início
-			Se o usuário/e-mail já existir
-				Retornar mensagem de erro para o usuário
-				("O usuário selecionado já está em uso.")
+			Preenche os campos com seus dados (todos os campos são obrigatórios)
+			nome de usuário, endereço de e-mail,senha, nome completo e sexo (H ou M)
+			(Ândrei Schuch, andreirs@outlook.com, minhasenha, Ândrei d'Oliveira Mesquita Schuch, H)
+		Sistema:	
+			Apresenta a mensagem de sucesso "Você foi cadastrado com sucesso. Acesse o seu e-mail para ativar a sua conta."
+			O sistema vai para a tela de login
 	Término do HU1C01
-HUX. O usuário pode enviar mensagem
-	HUXC01 Cenário envio de mensagem pública (sala)
-	HUXC02 Cenário envio de mensagem privada para amigos	
-HUX. O usuário pode adicionar e remover amigos
-	HUXC01 Cenário adicionar amigo
-	HUXC02 Cenário remover amigo
-HUX. O usuário pode entrar e sair de uma sala de bate-papo
-	HUXC01 
-HUX. O usuário pode visualizar o seu perfil e o de outros usuários
-	HUXC01 
-HUX. O administrador pode enviar mensagens coletivas
+
+	HU1C02 Cenário normal de erro
+		Usuário:
+			Preenche os campos com seus dados (todos os campos são obrigatórios)
+			nome de usuário, endereço de e-mail,senha, nome completo e sexo (H ou M)
+			(Ândrei Schuch, andreirs@outlook.com, minhasenha, Ândrei d'Oliveira Mesquita Schuch, H)
+		Sistema:
+			Apresenta a mensagem de erro 
+			("Não foi possível criar a sua conta. Cadastre-se manualmente pelo link http://codigomestre.forumbrasil.net/register .")
+			O sistema permanece na mesma tela
+	Término do HUXC02
+
+HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo
+
+	HU2C01 Cenário normal de sucesso ao entrar em uma sala
+		O usuário seleciona a opção "Salas" no menu lateral
+		O sistema apresenta a tela listando as salas de bate-papo da seguinte forma:
+			(Ícone, Nome da sala, Número de usuários online na sala, botão 'Entrar')
+		 O usuário seleciona a opção "Entrar"
+		 O sistema apresenta a tela de chat da sala selecionada
+			(campo de texto, área de texto e lista de usuários online na sala)
+	Término do HU2C01
+
+	HU2C01 Cenário normal de erro ao entrar em uma sala
+		O usuário seleciona a opção "Salas" no menu lateral
+		O sistema apresenta a tela listando as salas de bate-papo da seguinte forma:
+			(Ícone, Nome da sala, Número de usuários online na sala, botão 'Entrar')
+		 O usuário seleciona a opção "Entrar"
+		 O sistema apresenta a mensagem de erro
+		 ("Não foi possível entrar na sala.")
+		 O sistema permanece na mesma tela
+	Término do HU2C01
+	
+	HU2C02 Cenário normal de sucesso ao sair em uma sala
+		O usuário seleciona a opção 'Sair' na tela de chat
+		O sistema retorna para a tela 'Salas'
+	Término do HU2C02
+
+HU3. Como usuário eu devo poder enviar mensagens na sala em que eu estiver
+
+	HU3C01. Cenário normal de sucesso no envio de mensagem
+		O usuário entra em uma sala, escreve a mensagem no campo de texto e seleciona a opção 'Enviar'
+		O sistema apresenta a mensagem enviada logo abaixo da última mensagem no chat
+		(Foto do usuário, Nome e Mensagem) [efeito balão]
+	Término do HU3C01
+
+	HU3C02. Cenário normal de erro no envio de mensagem
+		O usuário entra em uma sala, escreve a mensagem no campo de texto e seleciona a opção 'Enviar'
+		O sistema apresenta a mensagem de erro para o usuário no campo de chat
+			("Não foi possível enviar a mensagem.")
+		O sistema permanece na mesma tela
+	Término do HU3C02
+
+HUX. Como usuário eu gostaria de poder ter uma lista de amigos e adicionar e remover usuários nela
+HUX. Como usuário eu devo poder enviar mensagens privadas para os meus amigos e para outros usuários
+HUX. Como usuário eu gostaria de poder bloquear usuários incômodos
+HUX. Como usuário eu devo poder visualizar as informações no meu perfil
+HUX. Como usuário eu devo poder visualizar as informações de perfil dos demais usuários pela lista
+de amigos e quando estivermos na mesma sala
+
+HUX. Como usuário quero poder utilizar códigos bb para formatar as mensagens que eu envio e 
+também poder apresentá-las com a sintaxe da linguagem de programação escolhida
+HUX. Como usuário devo poder visualizar o status online de meus amigos
+HUX. Como usuário quero poder anexar arquivos e imagens nas mensagens que eu enviar.
+HUX. Como usuário quero poder acessar várias salas ao mesmo tempo e ser avisado quanto ao número
+de mensagens não lidas em cada sala.
+	
+	|ADMINISTRADOR|
+
+HUX. Como administrador devo poder enviar mensagens coletivas para todos os usuários online
+HUX. Como administrador devo poder enviar mensagens coletivas para todos os usuários online em
+uma determinada sala
 HUX. O administrador pode ativar e desativar o servidor
 HUX. O administrador pode listar os usuários
