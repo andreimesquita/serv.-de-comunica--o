@@ -8,5 +8,7 @@ Sistema em desenvolvimento para a cadeira de Engenharia de Software III.
 Links úteis:
 
   <a href="http://www.portalgsti.com.br/2011/09/curso-gratuito-online-de-tdd.html">Curso gratuito online de TDD (Programação Orientada a Testes)</a>
+  <br>
   <a href="http://epf.eclipse.org/wikis/xp/">eXtreme Programming (epf.eclipse)</a>
+  <br>
   <a href="http://desenvolvimentoagil.com.br/xp/">Mais sobre XP</a>
