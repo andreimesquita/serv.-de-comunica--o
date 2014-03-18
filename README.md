@@ -12,3 +12,4 @@ Links úteis:
   <a href="http://epf.eclipse.org/wikis/xp/">eXtreme Programming (epf.eclipse)</a>
   <br>
   <a href="http://desenvolvimentoagil.com.br/xp/">Mais sobre XP</a>
+<a href="http://desenvolvimentoagil.com.br/xp/praticas/tdd/">Exemplo - TDD</a>
