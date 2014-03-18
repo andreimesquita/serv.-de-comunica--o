@@ -4,7 +4,7 @@ XP
 
 	|USUÁRIO|
 
-HU1. Como usuário eu devo poder me cadastrar no sistema
+HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 
 	HU1C01 Cenário normal de sucesso
 		O usuário preenche os campos com seus dados (todos os campos são obrigatórios)
@@ -50,7 +50,7 @@ HU1. Como usuário eu devo poder me cadastrar no sistema
 		O sistema permanece na mesma tela
 	Término do HUXC04
 
-HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo
+HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
 	HU2C01 Cenário normal de sucesso ao entrar em uma sala
 		 O usuário seleciona o nome da sala em que quer entrar no menu lateral
 		 O sistema apresenta a tela de chat da sala selecionada 
@@ -69,7 +69,7 @@ HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo
 		O sistema retorna para a tela principal
 	Término do HU2C03
 
-HU3. Como usuário eu devo poder enviar mensagens na sala
+HU3. Como usuário eu devo poder enviar mensagens na sala (3)
 
 	HU3C01. Cenário normal de sucesso no envio de mensagem
 		O usuário digita a mensagem no campo de texto e seleciona o botão 'Enter' no teclado
@@ -86,13 +86,53 @@ HU3. Como usuário eu devo poder enviar mensagens na sala
 		O sistema permanece na mesma tela
 	Término do HU3C02
 
-HU4. Como usuário eu devo poder enviar mensagens privadas para outros usuários
-HU5. Como usuário eu devo poder visualizar as informações no meu perfil
-HU6. Como usuário eu devo poder visualizar as informações de perfil dos demais usuários.
-HU7. Como usuário devo poder visualizar o status online de outros usuários.
-HU8. Como usuário quero poder acessar várias salas ao mesmo tempo e ser avisado quando existir 
-	 mensagens não lidas em cada sala
+HU4. Como usuário eu devo poder enviar mensagens privadas para outros usuários (1)
+
+	HU4C01. Cenário normal de sucesso quando ambos os usuários estão em uma sala
+		O usuário entra em uma sala de bate-papo
+		O usuário digite o barra + nome do remetente + espaço + mensagem
+		("/mauriciocarvalho51 Oi!")
+		O sistema envia a mensagem para o usuário
+		O ususário recebe a mensagem de uma cor diferente e da seguinte maneira:
+		nome do remetente + mensagem
+		("andreirs: Oi!")
+	Término do HU4C01
+
+HU5. Como usuário eu devo poder visualizar as informações de perfil dos demais usuários (1)
+
+	HU5C01. Cenário comum de sucesso
+		O usuário a
+		O usuário seleciona com o botão direito do mouse o nome de outro usuário
+		O sistema apresenta um popup
+		O usuário seleciona a opção 'Visualizar perfil...'
+		O sitema apresenta as informações do usuário selecionado em uma nova janela
+		O usuário visualiza as informações e fecha a janela
+	Término do HU5C01
+
+HU6. Como usuário quero poder entrar e sair de várias salas ao mesmo tempo (3)
+
+	HU6C01. Cenário comum de sucesso ao acessar uma nova sala
+		O usuário seleciona o nome de uma sala
+		O sistema apresenta a janela de bate-papo da sala
+		O usuário seleciona uma nova sala de bate-papo
+		O sistema apresenta a sala de bate-papo selecionada em uma nova aba
+	Término do HU6C01
+	
+	HU6C02. Cenário comum de sucesso ao sair de uma sala
+		O usuário entrou em duas salas de bate-papo
+		O usuário seleciona o botão 'X' na aba da sala em que deseja sair
+		O sistema retira o usuário da sala selecionada removendo a aba para o usuário
+	Término do HU6C02
+	
+HU7. Como usuário eu devo poder visualizar as informações no meu perfil*
+HU8. Como usuário devo poder visualizar o status online de outros usuários*
 
 	|ADMINISTRADOR|
 
 HU9. O administrador pode ativar e desativar o servidor
+
+	HU9C01. Cenário comum de sucesso de ativação do servidor
+		O administrador seleciona com o botão direito do mouse em cima do ícone 
+			na barra de tarefas
+		O sistema apresenta a mensagem de confirmação "Servidor iniciado com sucesso!"
+	Término do HU9C01

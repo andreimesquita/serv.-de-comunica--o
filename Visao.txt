@@ -2,19 +2,25 @@ Serv. de Comunicação
 
 Visão
 
-Problema
+Problema (TERMINAR)
 --------
-	1. Demora para responder as perguntas no fórum; demora para tirar dúvidas
-Envolvidos
+	- Demora para tirar dúvidas Envolvidos
+	- Não é possível conversas em tempo real
+	- Não há como manter contatos em uma lista privada, simplificando o registro de usuários
+	  relevantes
 ----------
 	1. Administrador
 	2. Usuário do fórum
+	3. Marco Mangan
+	4. Fundação Eclipse
 	Descrição
 	---------
-		-	O Administrador é o gestor do servidor e do banco de dados.
-		-	O Usuário do fórum é aquela pessoa inteligente que optou por instalar o nosso programa
+		1. É o gestor do servidor e do banco de dados.
+		2. É aquela pessoa inteligente que optou por instalar o nosso programa
 			e facilitar a tirada de dúvidas diretamente com profissionais competentes, nas salas de 
 			bate-papo.
+		3. 
+		4. 
 Características do Sistema
 --------------------------
 	Usuários entram em salas de bate-papo
