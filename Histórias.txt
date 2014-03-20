@@ -57,6 +57,7 @@ HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
 			nome da sala
 			("Java")
 	Término do HU2C01
+	
 	HU2C02 Cenário normal de erro ao entrar em uma sala
 		O usuário seleciona o nome da sala em que quer entrar no menu lateral
 		O sistema apresenta a mensagem de erro
