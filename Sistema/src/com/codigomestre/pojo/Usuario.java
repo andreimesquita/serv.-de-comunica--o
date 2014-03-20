@@ -1,5 +1,9 @@
 package com.codigomestre.pojo;
-
+/**
+ *     História de usuário sendo implementada HU1C01
+ * @version 1
+ * @author Maurício / Ândrei
+ */
 public class Usuario {
 	private String nomeUsuario, email, senha, confimacaoSenha;
 	

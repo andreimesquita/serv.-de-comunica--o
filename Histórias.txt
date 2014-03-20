@@ -52,7 +52,7 @@ HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 
 HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
 	HU2C01 Cenário normal de sucesso ao entrar em uma sala
-		 O usuário seleciona o nome da sala em que quer entrar no menu lateral
+		 O usuário seleciona o nome da sala em que quer entrar, no menu lateral
 		 O sistema apresenta a tela de chat da sala selecionada 
 			nome da sala
 			("Java")

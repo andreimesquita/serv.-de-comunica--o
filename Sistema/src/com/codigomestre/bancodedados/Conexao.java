@@ -1,4 +1,4 @@
-package banco.de.dados;
+package com.codigomestre.bancodedados;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -6,7 +6,11 @@ import java.sql.SQLException;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
-
+/**
+ *     História de usuário sendo implementada HU1C01
+ * @version 1
+ * @author Maurício / Ândrei
+ */
 public class Conexao {
 	
 	private static Conexao conexao;

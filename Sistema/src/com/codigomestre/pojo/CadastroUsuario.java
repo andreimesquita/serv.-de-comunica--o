@@ -3,10 +3,13 @@ package com.codigomestre.pojo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import banco.de.dados.Conexao;
-
+import com.codigomestre.bancodedados.Conexao;
 import com.mysql.jdbc.PreparedStatement;
-
+/**
+ *     História de usuário sendo implementada HU1C01
+ * @version 1
+ * @author Maurício / Ândrei
+ */
 public class CadastroUsuario {
 
 	private static final String SQL_TESTE_CADASTRO_EMAIL_EXISTE = "select * from usuarios where email=?";

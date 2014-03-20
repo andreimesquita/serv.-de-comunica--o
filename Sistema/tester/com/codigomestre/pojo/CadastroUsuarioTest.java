@@ -2,7 +2,11 @@ package com.codigomestre.pojo;
 
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ *     História de usuário sendo implementada HU1C01
+ * @version 1
+ * @author Maurício
+ */
 public class CadastroUsuarioTest {
 	@Before 
 	public void setUp() {
