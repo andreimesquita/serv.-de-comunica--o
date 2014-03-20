@@ -3,13 +3,13 @@ Histórias
 XP
 
 	|USUÁRIO|
-
+	
 HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 
 	HU1C01 Cenário normal de sucesso
 		O usuário preenche os campos com seus dados (todos os campos são obrigatórios)
 			nome de usuário, email, senha, confimação de senha
-			("AndreiRS","andreirs@outlook.com","*****","******")
+			("AndreiRS","andreirs@outlook.com","123","123")
 			O sistema apresenta a mensagem de sucesso "Você foi cadastrado com sucesso."
 			O sistema volta para a tela de login
 	Término do HU1C01
@@ -41,14 +41,14 @@ HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 		O sistema permanece na mesma tela
 	Término do HUXC04
 
-	HU1C04 Cenário de erro de confimação dos campos de senha
+	HU1C05 Cenário de erro de confimação dos campos de senha
 		O usuário preenche os campos com seus dados (todos os campos são obrigatórios)
 			nome de usuário, email, senha, confimação de senha
 			("AndreiRS","andreirs@outlook.com","*****","*****")
 		O sistema apresenta a mensagem de erro 
 			("Os campos de senha não correspondem.")
 		O sistema permanece na mesma tela
-	Término do HUXC04
+	Término do HUXC05
 
 HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
 	HU2C01 Cenário normal de sucesso ao entrar em uma sala
