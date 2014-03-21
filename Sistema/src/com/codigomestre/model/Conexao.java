@@ -1,4 +1,4 @@
-package com.codigomestre.bancodedados;
+package com.codigomestre.model;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

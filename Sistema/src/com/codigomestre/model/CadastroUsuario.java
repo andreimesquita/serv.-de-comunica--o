@@ -1,9 +1,9 @@
-package com.codigomestre.pojo;
+package com.codigomestre.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.codigomestre.bancodedados.Conexao;
+import com.codigomestre.model.pojo.Usuario;
 import com.mysql.jdbc.PreparedStatement;
 /**
  *     História de usuário sendo implementada HU1C01

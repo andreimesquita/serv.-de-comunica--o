@@ -1,7 +1,10 @@
-package com.codigomestre.pojo;
+package com.codigomestre.model;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.codigomestre.model.CadastroUsuario;
+import com.codigomestre.model.ErroDuranteCadastroException;
 /**
  *     História de usuário sendo implementada HU1C01
  * @version 1

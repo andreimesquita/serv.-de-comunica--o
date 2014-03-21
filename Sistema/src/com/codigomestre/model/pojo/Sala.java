@@ -1,10 +1,9 @@
-package com.codigomestre.repositorio;
+package com.codigomestre.model.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.codigomestre.pojo.Usuario;
-import com.codigomestre.pojo.UsuarioJaEstaNaSalaException;
+import com.codigomestre.model.UsuarioJaEstaNaSalaException;
 /**
  *   HU2C01
  * @version 1

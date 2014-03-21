@@ -1,12 +1,15 @@
-package com.codigomestre.repositorio;
+package com.codigomestre.model;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.codigomestre.pojo.Usuario;
-import com.codigomestre.pojo.UsuarioJaEstaNaSalaException;
+import com.codigomestre.model.NaoFoiPossivelEntrarNaSalaException;
+import com.codigomestre.model.Salas;
+import com.codigomestre.model.UsuarioJaEstaNaSalaException;
+import com.codigomestre.model.pojo.Sala;
+import com.codigomestre.model.pojo.Usuario;
 
 /**
  * HU2C01
@@ -42,7 +45,7 @@ public class SalasTest {
 	}
 
 	@Test(expected = NaoFoiPossivelEntrarNaSalaException.class)
-	public void testNaoFoiPossivelEntrarNaSala() throws UsuarioJaEstaNaSalaException,
+	public void testSalaInexistente() throws UsuarioJaEstaNaSalaException,
 	NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
 		Salas.entrarNaSala("Inexistente", u);

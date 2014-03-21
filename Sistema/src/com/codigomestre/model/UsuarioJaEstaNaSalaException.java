@@ -1,4 +1,4 @@
-package com.codigomestre.pojo;
+package com.codigomestre.model;
 /**
  *   HU2C01
  * @version 1

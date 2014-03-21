@@ -1,11 +1,11 @@
-package com.codigomestre.repositorio;
+package com.codigomestre.model;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import com.codigomestre.pojo.Usuario;
-import com.codigomestre.pojo.UsuarioJaEstaNaSalaException;
+import com.codigomestre.model.pojo.Sala;
+import com.codigomestre.model.pojo.Usuario;
 
 /**
  * HU2C01
