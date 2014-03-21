@@ -31,5 +31,14 @@ public class Sala {
 	public void clear() {
 		lista.clear();
 	}
+
+	public void remover(Usuario u) {
+		for (Usuario usuario : lista) {
+			if (usuario.getNomeUsuario().equals(u.getNomeUsuario())) {
+				lista.remove(usuario);
+				break;
+			}
+		}
+	}
 	
 }

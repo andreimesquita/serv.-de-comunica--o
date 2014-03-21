@@ -51,21 +51,21 @@ HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 	Término do HUXC05
 
 HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
-	HU2C01 Cenário normal de sucesso ao entrar em uma sala
+	(OK) HU2C01 Cenário normal de sucesso ao entrar em uma sala
 		 O usuário seleciona o nome da sala em que quer entrar, no menu lateral
 		 O sistema apresenta a tela de chat da sala selecionada 
 			nome da sala
 			("Java")
 	Término do HU2C01
 	
-	HU2C02 Cenário normal de erro ao entrar em uma sala
+	(OK) HU2C02 Cenário normal de erro ao entrar em uma sala
 		O usuário seleciona o nome da sala em que quer entrar no menu lateral
 		O sistema apresenta a mensagem de erro
 			("Não foi possível entrar na sala.")
 		sO sistema permanece na mesma tela
 	Término do HU2C02
 	
-	HU2C03 Cenário normal de sucesso ao sair em uma sala
+	(OK) HU2C03 Cenário normal de sucesso ao sair de uma sala
 		O usuário seleciona a opção 'Fechar' (X) ao lado na aba
 		O sistema retorna para a tela principal
 	Término do HU2C03
