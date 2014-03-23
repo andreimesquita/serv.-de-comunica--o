@@ -110,16 +110,16 @@ HU5. Como usuário eu devo poder visualizar as informações de perfil dos demai
 		O usuário visualiza as informações e fecha a janela
 	Término do HU5C01
 
-HU6. Como usuário quero poder entrar e sair de várias salas ao mesmo tempo (3)
+(OK) HU6. Como usuário quero poder entrar e sair de várias salas ao mesmo tempo (3)
 
-	HU6C01. Cenário comum de sucesso ao acessar uma nova sala
+	(OK) HU6C01. Cenário comum de sucesso ao acessar uma nova sala
 		O usuário seleciona o nome de uma sala
 		O sistema apresenta a janela de bate-papo da sala
 		O usuário seleciona uma nova sala de bate-papo
 		O sistema apresenta a sala de bate-papo selecionada em uma nova aba
 	Término do HU6C01
 	
-	HU6C02. Cenário comum de sucesso ao sair de uma sala
+	(OK) HU6C02. Cenário comum de sucesso ao sair de uma sala
 		O usuário entrou em duas salas de bate-papo
 		O usuário seleciona o botão 'X' na aba da sala em que deseja sair
 		O sistema retira o usuário da sala selecionada removendo a aba para o usuário

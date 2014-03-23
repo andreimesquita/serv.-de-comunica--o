@@ -1,24 +1,30 @@
 package com.codigomestre.model;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.codigomestre.model.NaoFoiPossivelEntrarNaSalaException;
-import com.codigomestre.model.Salas;
-import com.codigomestre.model.UsuarioJaEstaNaSalaException;
 import com.codigomestre.model.pojo.Sala;
 import com.codigomestre.model.pojo.Usuario;
 
 /**
- * HU2C01
- * 
- * @version 1
+ * Version 1
+ * 		HU2C01
+ *      HU2C02
+ *      HU2C03
+ * Version 2
+ * 		HU6C01
+ * 		HU6C02
+ * @version 2
  * @author Ândrei
  */
 public class SalasTest {
 
+	private Salas salas;
+	
 	@Before
 	public void setUp() {
 		Salas.limparERecriarSalas();
@@ -39,9 +45,7 @@ public class SalasTest {
 			NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
 		Salas.entrarNaSala("Java", u);
-
-		Usuario u2 = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
-		Salas.entrarNaSala("Java", u2);
+		Salas.entrarNaSala("Java", u);
 	}
 
 	@Test(expected = NaoFoiPossivelEntrarNaSalaException.class)
@@ -51,6 +55,7 @@ public class SalasTest {
 		Salas.entrarNaSala("Inexistente", u);
 	}
 
+
 	@Test
 	public void testSairDeUmaSala() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
@@ -58,4 +63,37 @@ public class SalasTest {
 		Salas.SairDaSala("Java", u);
 	}
 	
+	@Test
+	public void testEntrarEmVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");	
+		
+		String[] nomeSalas = Salas.getNomeSalas();
+		
+		for (String nomeSala : nomeSalas) {
+			Salas.entrarNaSala(nomeSala, u);
+		}
+		
+		List<Sala> salasUsuario = Salas.getSalaPorUsuario(u);
+		
+		assertEquals(nomeSalas.length,salasUsuario.size());
+	}
+	
+	@Test
+	public void testSairDeVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");	
+		
+		String[] nomeSalas = Salas.getNomeSalas();
+		
+		for (String nomeSala : nomeSalas) {
+			Salas.entrarNaSala(nomeSala, u);
+		}
+		
+		List<Sala> salasUsuarioOld = Salas.getSalaPorUsuario(u);
+		
+		Salas.SairDaSala(nomeSalas[2], u);
+		
+		List<Sala> salasUsuarioNew = Salas.getSalaPorUsuario(u);
+		
+		assertEquals(salasUsuarioOld.size() - 1, salasUsuarioNew.size());
+	}
 }

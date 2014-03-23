@@ -11,7 +11,7 @@ import com.codigomestre.model.UsuarioJaEstaNaSalaException;
  */
 public class Sala {
 	
-	private static List<Usuario> lista = new ArrayList<>();
+	private List<Usuario> lista = new ArrayList<>();
 	
 	public boolean estaNaSala(Usuario u) {
 		for (Usuario us : lista) {
