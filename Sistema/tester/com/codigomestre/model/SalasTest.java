@@ -81,7 +81,7 @@ public class SalasTest {
 	@Test
 	public void testSairDeVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");	
-		
+		// a
 		String[] nomeSalas = Salas.getNomeSalas();
 		
 		for (String nomeSala : nomeSalas) {
