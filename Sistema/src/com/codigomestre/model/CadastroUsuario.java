@@ -13,36 +13,32 @@ import com.mysql.jdbc.PreparedStatement;
 public class CadastroUsuario {
 
 	private static final String SQL_TESTE_CADASTRO_EMAIL_EXISTE = "select * from usuarios where email=?";
-	private static final String MENSAGEM_ERRO_EMAIL_EXISTENTE = "Email já cadastrado.";
-	private static final String TABELA_USUARIOS_NOME = "usuarios";
-	
-	
-	
 	private Conexao conexao;
 	
 	
 	public CadastroUsuario () {
-		this.conexao = Conexao.getInstance();
+		try {
+			this.conexao = Conexao.getInstance();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public void cadastrar( Usuario u ) throws ErroDuranteCadastroException, ErroDeConexaoException, SQLException {		
+	public void cadastrar( Usuario u ) throws ErroDuranteCadastroException, SQLException {		
 		
 		PreparedStatement objprep = conexao.getRetornarEstadoDePreparo(SQL_TESTE_CADASTRO_EMAIL_EXISTE); 
 		objprep.setString(1, u.getEmail());
 		ResultSet objrs = objprep.executeQuery();
-		boolean b = false;
-		while ( objrs.next() ) {
-			b=true;
-		}
-		if ( b ) {
-			throw new ErroDuranteCadastroException(MENSAGEM_ERRO_EMAIL_EXISTENTE);
-		}
+		objrs.get
 		
+		if (u != null) {
+			throw new ErroDuranteCadastroException("Email já cadastrado.");
+		}
 	}
 	
-	public void reset() throws SQLException, ErroDeConexaoException {
-		PreparedStatement objprep = conexao.getRetornarEstadoDePreparo( "truncate table ".concat(TABELA_USUARIOS_NOME)); 
-		objprep.execute();
+	public static void reset() {
+		lista.clear();
 	}
 	
 }
