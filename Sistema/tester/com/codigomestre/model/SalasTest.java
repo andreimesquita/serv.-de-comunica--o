@@ -33,7 +33,7 @@ public class SalasTest {
 	@Test
 	public void testEntrarNaSala() throws UsuarioJaEstaNaSalaException,
 			NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
 		Salas.entrarNaSala("Java", u);
 		Sala s = Salas.getSala("Java");
 		assertTrue(s.estaNaSala(u));
@@ -43,7 +43,7 @@ public class SalasTest {
 	public void testEntrarNaSalaDuplicata()
 			throws UsuarioJaEstaNaSalaException,
 			NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
 		Salas.entrarNaSala("Java", u);
 		Salas.entrarNaSala("Java", u);
 	}
@@ -51,21 +51,21 @@ public class SalasTest {
 	@Test(expected = NaoFoiPossivelEntrarNaSalaException.class)
 	public void testSalaInexistente() throws UsuarioJaEstaNaSalaException,
 	NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
 		Salas.entrarNaSala("Inexistente", u);
 	}
 
 
 	@Test
 	public void testSairDeUmaSala() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
 		Salas.entrarNaSala("Java", u);
 		Salas.SairDaSala("Java", u);
 	}
 	
 	@Test
 	public void testEntrarEmVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");	
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");	
 		
 		String[] nomeSalas = Salas.getNomeSalas();
 		
@@ -80,8 +80,8 @@ public class SalasTest {
 	
 	@Test
 	public void testSairDeVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
-		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123", "123");	
-		// a
+		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");	
+		
 		String[] nomeSalas = Salas.getNomeSalas();
 		
 		for (String nomeSala : nomeSalas) {
