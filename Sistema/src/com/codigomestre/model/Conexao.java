@@ -29,11 +29,11 @@ public class Conexao {
  	}
 	
 	public PreparedStatement getRetornarEstadoDePreparo( String sql ) throws SQLException, ErroDeConexaoException {
-		if (estaConectado) {
-			return (PreparedStatement) connection.prepareStatement(sql) ;
-		} else {
+		if (!estaConectado) {
 			throw new ErroDeConexaoException(MENSAGEM_ERRO_DURANTE_CADASTRO);
 		}
+		
+		return (PreparedStatement) connection.prepareStatement(sql) ;
 	}
 
 	public void desconectar() throws SQLException {

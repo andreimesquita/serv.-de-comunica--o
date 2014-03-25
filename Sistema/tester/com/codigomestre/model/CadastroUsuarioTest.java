@@ -26,7 +26,7 @@ public class CadastroUsuarioTest extends TestCase {
 		cadastro.reset();
 	}
 
-	@Test
+	@Test	
 	public void testeCriacaoDeUsuarioComSucesso()
 			throws ErroDuranteCadastroException, SQLException, ErroDeConexaoException {
 		Usuario user = new Usuario("AndreiRS", "andreirs@outlook.com", "123"); 
