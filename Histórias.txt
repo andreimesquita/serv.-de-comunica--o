@@ -53,9 +53,9 @@ HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 (OK) HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
 	(OK) HU2C01 Cenário normal de sucesso ao entrar em uma sala
 		 O usuário seleciona o nome da sala em que quer entrar, no menu lateral
-		 O sistema apresenta a tela de chat da sala selecionada 
-			nome da sala
-			("Java")
+			 nome da sala
+				("Java")
+		 O sistema apresenta a tela de chat da sala selecionada
 	Término do HU2C01
 	
 	(OK) HU2C02 Cenário normal de erro ao entrar em uma sala
@@ -130,10 +130,11 @@ HU8. Como usuário devo poder visualizar o status online de outros usuários*
 
 	|ADMINISTRADOR|
 
-HU9. O administrador pode ativar e desativar o servidor
+(OK) HU9. O administrador pode ativar e desativar o servidor
 
-	HU9C01. Cenário comum de sucesso de ativação do servidor
+	(OK) HU9C01. Cenário comum de sucesso de ativação do servidor
 		O administrador seleciona com o botão direito do mouse em cima do ícone 
 			na barra de tarefas
+		O administrador seleciona a opção "Ativar/Desativar"
 		O sistema apresenta a mensagem de confirmação "Servidor iniciado com sucesso!"
 	Término do HU9C01

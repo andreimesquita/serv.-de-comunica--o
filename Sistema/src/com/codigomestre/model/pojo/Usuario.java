@@ -7,13 +7,10 @@ package com.codigomestre.model.pojo;
 public class Usuario {
 	private String nomeUsuario, email, senha, confimacaoSenha;
 	
-	public Usuario(String nomeUsuario, String email, String senha,
-			String confimacaoSenha) {
-		super();
+	public Usuario(String nomeUsuario, String email, String senha) {
 		this.nomeUsuario = nomeUsuario;
 		this.email = email;
 		this.senha = senha;
-		this.confimacaoSenha = confimacaoSenha;
 	}
 
 	public String getNomeUsuario() {
