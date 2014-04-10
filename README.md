@@ -16,3 +16,5 @@ Links úteis:
   <a href="http://desenvolvimentoagil.com.br/xp/praticas/tdd/">Exemplo - TDD</a>
   <br>
   <a hred="http://www.k19.com.br/artigos/mvc-simples-e-pratico-parte-i/">O Padrão MVC</a>
+  
+  integrantes: Mauricio e Andrei
