@@ -16,6 +16,8 @@ public class ServidorSuporte implements Runnable {
 	private Thread t;
 	private List<Sala> lista;
 	
+	private static final String CODIGO_CADASTRAR = "cu", CODIGO_CADASTRAR_SUCESSO = "cus";
+	
 	public ServidorSuporte(Socket clienteAtual) {
 		this.cliente=clienteAtual;
 		t=new Thread(this);
@@ -30,7 +32,6 @@ public class ServidorSuporte implements Runnable {
 		FileInputStream  f = new FileInputStream(file.getAbsoluteFile());
 		prop.load(f);
 		String s = prop.getProperty("codigo");
-		System.out.println(s);
 		f.close();
 	}
 
@@ -40,14 +41,20 @@ public class ServidorSuporte implements Runnable {
 			ObjectOutputStream obo = new ObjectOutputStream( cliente.getOutputStream());
 			ObjectInputStream obi = new ObjectInputStream(cliente.getInputStream());
 			while (true) {
-				System.out.println("MENSAGEM RECEBIDA");
+				Properties proRespostas = new Properties();
+				
 				Properties pro = (Properties) obi.readObject();
 				String s = pro.getProperty("codigo");
-				System.out.println(s);
-				if (s.equals("tc")) {
-					Properties pp = new Properties();
-					pp.put("codigo", "rtc");
-					obo.writeObject(pp);
+				switch (s) {
+				case CODIGO_CADASTRAR:
+					proRespostas.put("codigo", CODIGO_CADASTRAR_SUCESSO);
+					obo.writeObject(proRespostas);
+					break;
+
+				case "tc":
+					proRespostas.put("codigo", "rtc");
+					obo.writeObject(proRespostas);
+					break;
 				}
 			}
 		} catch (Exception e) {

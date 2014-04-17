@@ -1,4 +1,8 @@
 package com.codigomestre.model.pojo;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *     História de usuário sendo implementada HU1C01
  * @version 1
@@ -39,6 +43,21 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	/**
+	 *     Este método retorna as informações do usuário no formato Map<String,String> pronto para ser adicionado ao arquivo Properties.
+	 * @return HashMap contendo as informações do usuário.
+	 */
+	public Map<String, String> toHashMap() {
+		Map<String, String> map = new HashMap<>();
+		map.put("nu", getNomeUsuario());
+		map.put("e", getEmail());
+		map.put("s", getConfimacaoSenha());
+		return map;
 	}
 	
 }

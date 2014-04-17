@@ -3,6 +3,9 @@ package com.codigomestre.servidor;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.List;
+
+import com.codigomestre.model.Salas;
 
 public class Servidor implements Runnable {
 	
@@ -24,7 +27,6 @@ public class Servidor implements Runnable {
 		
 		try {
 			servidor = new ServerSocket(PORTA);
-			System.out.println("ENDEREÇO: " + servidor.getInetAddress().getHostAddress());
 			
 		} catch (Exception e) {
 			System.out.println("Não foi possível inicializar o servidor!");
@@ -35,7 +37,6 @@ public class Servidor implements Runnable {
 			try {
 				Socket clienteAtual = servidor.accept();
 				new ServidorSuporte(clienteAtual);
-				System.out.println("O usuario foi conectado......");
 				// ((ObjectOutputStream) clienteAtual.getOutputStream()).writeObject("metodo run!!!");
 				
 			} catch(IOException ioe) {}
@@ -48,5 +49,11 @@ public class Servidor implements Runnable {
 		thread.stop();
 		servidor.close();
 		
+	}
+	/**
+	 * Apaga valores de todas as tabelas no banco.
+	 */
+	public void reset() {
+		// TODO codificar	
 	}
 }
