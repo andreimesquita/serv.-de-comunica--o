@@ -4,10 +4,8 @@ Visão
 
 Problema (TERMINAR)
 --------
-	- Demora para tirar dúvidas Envolvidos
-	- Não é possível conversas em tempo real
-	- Não há como manter contatos em uma lista privada, simplificando o registro de usuários
-	  relevantes
+	Demora e incapacidade de se comunicar diretamente e tirar dúvidas com os demais membros
+	do fórum.
 ----------
 	1. Administrador
 	2. Usuário do fórum
@@ -17,10 +15,8 @@ Problema (TERMINAR)
 	---------
 		1. É o gestor do servidor e do banco de dados.
 		2. É aquela pessoa inteligente que optou por instalar o nosso programa
-			e facilitar a tirada de dúvidas diretamente com profissionais competentes, nas salas de 
-			bate-papo.
-		3. 
-		4. 
+			e facilitar a tirada de dúvidas diretamente com profissionais competentes, nas salas 
+			de bate-papo.
 Características do Sistema
 --------------------------
 	Usuários entram em salas de bate-papo

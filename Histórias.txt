@@ -125,16 +125,38 @@ HU5. Como usuário eu devo poder visualizar as informações de perfil dos demai
 		O sistema retira o usuário da sala selecionada removendo a aba para o usuário
 	Término do HU6C02
 	
-HU7. Como usuário eu devo poder visualizar as informações no meu perfil*
-HU8. Como usuário devo poder visualizar o status online de outros usuários*
+HU7. Como usuário eu devo poder me logar no sistema
+
+	HU7C01. Cenário comum de seucesso durante logon
+		O usuário entra com os dados de login (usuário ou email, senha)
+			("andreirs@outlook.com","123")
+		O sistema apresenta a tela de loading
+		O sistema confirma os dados no servidor
+		O sistema apresenta a tela 'Home'
+	Término do HU7C01
+	
+	HU7C02. Cenário de fracasso para login inexistente
+	Término do HU7C02
+	
+	HU7C03. Cenário de fracasso para senha errada
+	Término do HU7C03
+	
+HU8. Como usuário eu devo poder visualizar as informações no meu perfil*
+HU9. Como usuário devo poder visualizar o status online de outros usuários*
 
 	|ADMINISTRADOR|
 
+<<<<<<< HEAD
+(OK) HU10. O administrador pode ativar e desativar o servidor
+
+	(OK) HU10C01. Cenário comum de sucesso de ativação do servidor
+=======
 (OK) HU9. O administrador pode ativar e desativar o servidor
 
 	(OK) HU9C01. Cenário comum de sucesso de ativação do servidor
+>>>>>>> 454f15b7e3954302d9aba45d6efb4e9f092fbeea
 		O administrador seleciona com o botão direito do mouse em cima do ícone 
 			na barra de tarefas
 		O administrador seleciona a opção "Ativar/Desativar"
 		O sistema apresenta a mensagem de confirmação "Servidor iniciado com sucesso!"
-	Término do HU9C01
+	Término do HU10C01

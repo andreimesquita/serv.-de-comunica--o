@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="tester"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing-SWT.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing-SWTAPI.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing-SWTCore.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing-SWTDemo.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing.jar"/>
+	<classpathentry kind="lib" path="lib/jna_WindowUtils.jar"/>
+	<classpathentry kind="lib" path="lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/JTattoo-1.6.10.jar"/>
+	<classpathentry kind="lib" path="lib/jxbrowser-4.3.jar"/>
+	<classpathentry kind="lib" path="lib/jxbrowser-win-4.3.jar"/>
+	<classpathentry kind="lib" path="lib/MozillaInterfaces-1.8.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="lib/swingx-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

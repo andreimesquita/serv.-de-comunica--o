@@ -1,6 +1,8 @@
 package com.codigomestre.model.pojo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.codigomestre.model.UsuarioJaEstaNaSalaException;
@@ -12,6 +14,7 @@ import com.codigomestre.model.UsuarioJaEstaNaSalaException;
 public class Sala {
 	
 	private List<Usuario> lista = new ArrayList<>();
+	private static String ultimaMensagem;
 	
 	public boolean estaNaSala(Usuario u) {
 		for (Usuario us : lista) {
@@ -38,6 +41,16 @@ public class Sala {
 				break;
 			}
 		}
+	}
+
+	public static void escrever(String nome, String mensagem) {
+		Calendar c = Calendar.getInstance();
+		Date data = c.getTime();
+		Sala.ultimaMensagem = nome + " [" + data.getHours() + "h:" + data.getMinutes() + "m]:" + mensagem;
+	}
+
+	public static String getUltimaMensagem() {
+		return ultimaMensagem;
 	}
 	
 }

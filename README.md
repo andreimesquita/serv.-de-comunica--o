@@ -16,5 +16,14 @@ Links úteis:
   <a href="http://desenvolvimentoagil.com.br/xp/praticas/tdd/">Exemplo - TDD</a>
   <br>
   <a hred="http://www.k19.com.br/artigos/mvc-simples-e-pratico-parte-i/">O Padrão MVC</a>
+<<<<<<< HEAD
+
+Teste 
+  
+ JBegave
+ Cukes.org (diferente do teste de automação)
+ 
+=======
   
   integrantes: Mauricio, Andrei e Mangan
+>>>>>>> 454f15b7e3954302d9aba45d6efb4e9f092fbeea
