@@ -23,19 +23,19 @@ import com.codigomestre.model.pojo.Usuario;
  */
 public class SalasTest {
 
-	private Salas salas;
+	private Salas salas = new Salas();
 	
 	@Before
 	public void setUp() {
-		Salas.limparERecriarSalas();
+		salas.limparERecriarSalas();
 	}
 
 	@Test
 	public void testEntrarNaSala() throws UsuarioJaEstaNaSalaException,
 			NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
-		Salas.entrarNaSala("Java", u);
-		Sala s = Salas.getSala("Java");
+		salas.entrarNaSala("Java", u);
+		Sala s = salas.getSala("Java");
 		assertTrue(s.estaNaSala(u));
 	}
 
@@ -44,36 +44,36 @@ public class SalasTest {
 			throws UsuarioJaEstaNaSalaException,
 			NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
-		Salas.entrarNaSala("Java", u);
-		Salas.entrarNaSala("Java", u);
+		salas.entrarNaSala("Java", u);
+		salas.entrarNaSala("Java", u);
 	}
 
 	@Test(expected = NaoFoiPossivelEntrarNaSalaException.class)
 	public void testSalaInexistente() throws UsuarioJaEstaNaSalaException,
 	NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
-		Salas.entrarNaSala("Inexistente", u);
+		salas.entrarNaSala("Inexistente", u);
 	}
 
 
 	@Test
 	public void testSairDeUmaSala() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");
-		Salas.entrarNaSala("Java", u);
-		Salas.SairDaSala("Java", u);
+		salas.entrarNaSala("Java", u);
+		salas.SairDaSala("Java", u);
 	}
 	
 	@Test
 	public void testEntrarEmVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");	
 		
-		String[] nomeSalas = Salas.getNomeSalas();
+		String[] nomeSalas = salas.getNomeSalas();
 		
 		for (String nomeSala : nomeSalas) {
-			Salas.entrarNaSala(nomeSala, u);
+			salas.entrarNaSala(nomeSala, u);
 		}
 		
-		List<Sala> salasUsuario = Salas.getSalaPorUsuario(u);
+		List<Sala> salasUsuario = salas.getSalaPorUsuario(u);
 		
 		assertEquals(nomeSalas.length,salasUsuario.size());
 	}
@@ -82,17 +82,17 @@ public class SalasTest {
 	public void testSairDeVariasSalas() throws UsuarioJaEstaNaSalaException, NaoFoiPossivelEntrarNaSalaException {
 		Usuario u = new Usuario("andrei", "andreirs@outlook.com", "123");	
 		// a
-		String[] nomeSalas = Salas.getNomeSalas();
+		String[] nomeSalas = salas.getNomeSalas();
 		
 		for (String nomeSala : nomeSalas) {
-			Salas.entrarNaSala(nomeSala, u);
+			salas.entrarNaSala(nomeSala, u);
 		}
 		
-		List<Sala> salasUsuarioOld = Salas.getSalaPorUsuario(u);
+		List<Sala> salasUsuarioOld = salas.getSalaPorUsuario(u);
 		
-		Salas.SairDaSala(nomeSalas[2], u);
+		salas.SairDaSala(nomeSalas[2], u);
 		
-		List<Sala> salasUsuarioNew = Salas.getSalaPorUsuario(u);
+		List<Sala> salasUsuarioNew = salas.getSalaPorUsuario(u);
 		
 		assertEquals(salasUsuarioOld.size() - 1, salasUsuarioNew.size());
 	}
