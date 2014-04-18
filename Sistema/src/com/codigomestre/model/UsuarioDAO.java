@@ -29,7 +29,7 @@ public class UsuarioDAO {
 	private Conexao conexao;
 	
 	
-	public UsuarioDAO () {
+	public UsuarioDAO () throws SQLException, ErroDeConexaoException {
 		this.conexao = Conexao.getInstance();
 		this.conexao.conectar();
 		this.conexao.getRetornarEstadoDePreparo(SQL_CRIAR_TABELA_USUARIO);
