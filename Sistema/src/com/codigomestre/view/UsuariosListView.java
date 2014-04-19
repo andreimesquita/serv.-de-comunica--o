@@ -16,7 +16,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
 public class UsuariosListView extends JScrollPane {
-	
+
 	private JTable lista;
 	private UsuarioTableModel model;
 	private JFrame janela;
@@ -75,7 +75,7 @@ public class UsuariosListView extends JScrollPane {
 					if (toast.isThreadIniciada()) {
 						toast.pararThread();
 					}
-					
+
 					toast.setMsg("Você clicou em \"" + usuario.getNome() + "\"");
 					toast.setDuracao(Toast.RAPIDO);
 					toast.iniciarThread();
@@ -89,7 +89,7 @@ public class UsuariosListView extends JScrollPane {
 
 		setMinimumSize(Constantes.USUARIOSLISTAVIEW_MINIMUM_SIZE);
 		setMaximumSize(Constantes.USUARIOSLISTAVIEW_MAXIMUM_SIZE);
-		//setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		// setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 
 		model = new UsuarioTableModel();
 

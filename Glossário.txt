@@ -1,0 +1,17 @@
+Valores assinalados com * são apenas representações daquilo que deve ser retornado no arquivo XML.
+
+Cliente p/ Servidor
+	Cadastrar usuário
+		codigo: cu
+		UsuarioPOJO*
+
+Servidor p/ Cliente
+	Cadastrar usuário
+			Sucesso
+				codigo: scu
+				UsuárioPOJO*
+			Fracasso
+				E-mail duplicado
+					
+				Usuário duplicado
+					
