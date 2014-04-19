@@ -12,16 +12,14 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-
-
 public class ServidorView {
 
 	SystemTray st;
-	
+
 	public ServidorView() {
 		File arq = new File("E:\\kraicon.jpg");
 		BufferedImage jpg = null;
-		
+
 		try {
 			jpg = ImageIO.read(arq);
 		} catch (IOException e) {

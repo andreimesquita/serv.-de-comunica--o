@@ -16,16 +16,18 @@ import com.codigomestre.model.pojo.Usuario;
  */
 public class Salas {
 
-	private static final String[] nomeSalas = {
-		"Android","Arduino","C/C++","C#","HTML","Java","JavaScript","JQuery","Python","PHP","Ruby"
-	};
+	private static final String[] nomeSalas = { "Android", "Arduino", "C/C++",
+			"C#", "HTML", "Java", "JavaScript", "JQuery", "Python", "PHP",
+			"Ruby" };
 	private static Map<String, Sala> salas = new HashMap<>(nomeSalas.length);
-	
+
 	public void entrarNaSala(String nomeSala, Usuario u)
 			throws UsuarioJaEstaNaSalaException,
 			NaoFoiPossivelEntrarNaSalaException {
 		Sala s = getSala(nomeSala);
-		if (s == null) throw new NaoFoiPossivelEntrarNaSalaException("Não foi possível entrar na sala.");
+		if (s == null)
+			throw new NaoFoiPossivelEntrarNaSalaException(
+					"Não foi possível entrar na sala.");
 		s.entrar(u);
 	}
 
@@ -33,16 +35,16 @@ public class Salas {
 		return salas.get(nomeSala);
 	}
 
-	public List<Sala> getSalas(String ... nomes) {
+	public List<Sala> getSalas(String... nomes) {
 		List<Sala> lista = new ArrayList<>();
-		
+
 		for (String s : nomes) {
 			lista.add(getSala(s));
 		}
-		
+
 		return lista;
 	}
-	
+
 	public void limparERecriarSalas() {
 		if (salas.size() > 0) {
 			for (String nomeSala : nomeSalas) {
@@ -67,14 +69,14 @@ public class Salas {
 
 	public List<Sala> getSalaPorUsuario(Usuario u) {
 		List<Sala> lista = new ArrayList<>();
-		
+
 		for (String nomeSala : nomeSalas) {
 			Sala s = salas.get(nomeSala);
 			if (s.estaNaSala(u)) {
 				lista.add(s);
 			}
 		}
-		
+
 		return lista;
 	}
 

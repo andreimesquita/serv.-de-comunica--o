@@ -21,58 +21,64 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
  */
 public class SettingContent extends JPanel {
 
-  private static final String LS = System.getProperty("line.separator");
+	private static final String LS = System.getProperty("line.separator");
 
-  public SettingContent() {
-    super(new BorderLayout());
-    JPanel webBrowserPanel = new JPanel(new BorderLayout());
-    webBrowserPanel.setBorder(BorderFactory.createTitledBorder("Native Web Browser component"));
-    final JWebBrowser webBrowser = new JWebBrowser();
-    webBrowser.setBarsVisible(false);
-    webBrowser.setStatusBarVisible(true);
-    webBrowserPanel.add(webBrowser, BorderLayout.CENTER);
-    add(webBrowserPanel, BorderLayout.CENTER);
-    JPanel configurationPanel = new JPanel(new BorderLayout());
-    configurationPanel.setBorder(BorderFactory.createTitledBorder("Configuration"));
-    final JTextArea configurationTextArea = new JTextArea(
-        "<html>" + LS +
-        "  <body>" + LS +
-        "    <h1>Some header</h1>" + LS +
-        "    <p>A paragraph with a <a href=\"http://www.google.com\">link</a>.</p>" + LS +
-        "  </body>" + LS +
-        "</html>");
-    JScrollPane scrollPane = new JScrollPane(configurationTextArea);
-    Dimension preferredSize = scrollPane.getPreferredSize();
-    preferredSize.height += 20;
-    scrollPane.setPreferredSize(preferredSize);
-    configurationPanel.add(scrollPane, BorderLayout.CENTER);
-    JPanel configurationButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 0));
-    JButton setContentButton = new JButton("Set Content");
-    setContentButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        webBrowser.setHTMLContent(configurationTextArea.getText());
-      }
-    });
-    configurationButtonPanel.add(setContentButton);
-    configurationPanel.add(configurationButtonPanel, BorderLayout.SOUTH);
-    add(configurationPanel, BorderLayout.NORTH);
-  }
+	public SettingContent() {
+		super(new BorderLayout());
+		JPanel webBrowserPanel = new JPanel(new BorderLayout());
+		webBrowserPanel.setBorder(BorderFactory
+				.createTitledBorder("Native Web Browser component"));
+		final JWebBrowser webBrowser = new JWebBrowser();
+		webBrowser.setBarsVisible(false);
+		webBrowser.setStatusBarVisible(true);
+		webBrowserPanel.add(webBrowser, BorderLayout.CENTER);
+		add(webBrowserPanel, BorderLayout.CENTER);
+		JPanel configurationPanel = new JPanel(new BorderLayout());
+		configurationPanel.setBorder(BorderFactory
+				.createTitledBorder("Configuration"));
+		final JTextArea configurationTextArea = new JTextArea(
+				"<html>"
+						+ LS
+						+ "  <body>"
+						+ LS
+						+ "    <h1>Some header</h1>"
+						+ LS
+						+ "    <p>A paragraph with a <a href=\"http://www.google.com\">link</a>.</p>"
+						+ LS + "  </body>" + LS + "</html>");
+		JScrollPane scrollPane = new JScrollPane(configurationTextArea);
+		Dimension preferredSize = scrollPane.getPreferredSize();
+		preferredSize.height += 20;
+		scrollPane.setPreferredSize(preferredSize);
+		configurationPanel.add(scrollPane, BorderLayout.CENTER);
+		JPanel configurationButtonPanel = new JPanel(new FlowLayout(
+				FlowLayout.CENTER, 0, 0));
+		JButton setContentButton = new JButton("Set Content");
+		setContentButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				webBrowser.setHTMLContent(configurationTextArea.getText());
+			}
+		});
+		configurationButtonPanel.add(setContentButton);
+		configurationPanel.add(configurationButtonPanel, BorderLayout.SOUTH);
+		add(configurationPanel, BorderLayout.NORTH);
+	}
 
-  /* Standard main method to try that test as a standalone application. */
-  public static void main(String[] args) {
-    UIUtils.setPreferredLookAndFeel();
-    NativeInterface.open();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        JFrame frame = new JFrame("DJ Native Swing Test");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new SettingContent(), BorderLayout.CENTER);
-        frame.setSize(800, 600);
-        frame.setLocationByPlatform(true);
-        frame.setVisible(true);
-      }
-    });
-    NativeInterface.runEventPump();
-  }
+	/* Standard main method to try that test as a standalone application. */
+	public static void main(String[] args) {
+		UIUtils.setPreferredLookAndFeel();
+		NativeInterface.open();
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				JFrame frame = new JFrame("DJ Native Swing Test");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.getContentPane().add(new SettingContent(),
+						BorderLayout.CENTER);
+				frame.setSize(800, 600);
+				frame.setLocationByPlatform(true);
+				frame.setVisible(true);
+			}
+		});
+		NativeInterface.runEventPump();
+	}
 
 }

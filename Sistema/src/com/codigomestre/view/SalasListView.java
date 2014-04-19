@@ -89,7 +89,7 @@ public class SalasListView extends JScrollPane {
 		public void actionPerformed(ActionEvent arg0) {
 			if (!salasabasview.isNaSala(nomeSalas[ref])) {
 				JPanel jp = new JPanel();
-				jp.add(new JLabel( nomeSalas[ref] ) );
+				jp.add(new JLabel(nomeSalas[ref]));
 				JButton btn = new JButton("Sair da sala");
 				btn.addActionListener((e) -> {
 					salasabasview.removerSala(nomeSalas[ref]);

@@ -14,29 +14,32 @@ import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
  */
 public class ClasspathPages extends JPanel {
 
-  public ClasspathPages() {
-    super(new BorderLayout());
-    JWebBrowser webBrowser = new JWebBrowser();
-    webBrowser.navigate(WebServer.getDefaultWebServer().getClassPathResourceURL(getClass().getName(), "resource/page1.html"));
-    webBrowser.setBarsVisible(false);
-    add(webBrowser, BorderLayout.CENTER);
-  }
+	public ClasspathPages() {
+		super(new BorderLayout());
+		JWebBrowser webBrowser = new JWebBrowser();
+		webBrowser.navigate(WebServer.getDefaultWebServer()
+				.getClassPathResourceURL(getClass().getName(),
+						"resource/page1.html"));
+		webBrowser.setBarsVisible(false);
+		add(webBrowser, BorderLayout.CENTER);
+	}
 
-  /* Standard main method to try that test as a standalone application. */
-  public static void main(String[] args) {
-    UIUtils.setPreferredLookAndFeel();
-    NativeInterface.open();
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        JFrame frame = new JFrame("DJ Native Swing Test");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new ClasspathPages(), BorderLayout.CENTER);
-        frame.setSize(800, 600);
-        frame.setLocationByPlatform(true);
-        frame.setVisible(true);
-      }
-    });
-    NativeInterface.runEventPump();
-  }
+	/* Standard main method to try that test as a standalone application. */
+	public static void main(String[] args) {
+		UIUtils.setPreferredLookAndFeel();
+		NativeInterface.open();
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				JFrame frame = new JFrame("DJ Native Swing Test");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.getContentPane().add(new ClasspathPages(),
+						BorderLayout.CENTER);
+				frame.setSize(800, 600);
+				frame.setLocationByPlatform(true);
+				frame.setVisible(true);
+			}
+		});
+		NativeInterface.runEventPump();
+	}
 
 }

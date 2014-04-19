@@ -1,6 +1,8 @@
 package com.codigomestre.model;
+
 /**
- *     História de usuário sendo implementada HU1C01
+ * História de usuário sendo implementada HU1C01
+ * 
  * @version 1
  * @author Maurício / Ândrei
  */

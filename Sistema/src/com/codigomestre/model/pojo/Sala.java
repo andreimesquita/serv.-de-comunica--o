@@ -6,26 +6,31 @@ import java.util.Date;
 import java.util.List;
 
 import com.codigomestre.model.UsuarioJaEstaNaSalaException;
+
 /**
- *   HU2C01
+ * HU2C01
+ * 
  * @version 1
  * @author Ândrei
  */
 public class Sala {
-	
+
 	private List<Usuario> lista = new ArrayList<>();
 	private static String ultimaMensagem;
-	
+
 	public boolean estaNaSala(Usuario u) {
 		for (Usuario us : lista) {
-			if (us.getNomeUsuario().equals(u.getNomeUsuario())) return true;
+			if (us.getNomeUsuario().equals(u.getNomeUsuario()))
+				return true;
 		}
 		return false;
 	}
-	
-	public void entrar(Usuario u)  throws UsuarioJaEstaNaSalaException {
+
+	public void entrar(Usuario u) throws UsuarioJaEstaNaSalaException {
 		for (Usuario usuario : lista) {
-			if (usuario.getNomeUsuario().equals(u.getNomeUsuario())) throw new UsuarioJaEstaNaSalaException("O usuário já está na sala!");
+			if (usuario.getNomeUsuario().equals(u.getNomeUsuario()))
+				throw new UsuarioJaEstaNaSalaException(
+						"O usuário já está na sala!");
 		}
 		lista.add(u);
 	}
@@ -46,11 +51,12 @@ public class Sala {
 	public static void escrever(String nome, String mensagem) {
 		Calendar c = Calendar.getInstance();
 		Date data = c.getTime();
-		Sala.ultimaMensagem = nome + " [" + data.getHours() + "h:" + data.getMinutes() + "m]:" + mensagem;
+		Sala.ultimaMensagem = nome + " [" + data.getHours() + "h:"
+				+ data.getMinutes() + "m]:" + mensagem;
 	}
 
 	public static String getUltimaMensagem() {
 		return ultimaMensagem;
 	}
-	
+
 }

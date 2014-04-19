@@ -7,8 +7,8 @@ import javax.swing.JLabel;
 
 public interface Constantes {
 
-	Dimension WINDOW_SIZE_MAX = new Dimension(1920,1080);
-	Dimension WINDOW_SIZE_MIN = new Dimension(1280,720);
+	Dimension WINDOW_SIZE_MAX = new Dimension(1920, 1080);
+	Dimension WINDOW_SIZE_MIN = new Dimension(1280, 720);
 
 	Dimension BACKGROUND_MINIMUM_SIZE = new Dimension(600, 480);
 	Dimension BACKGROUND_PREFERRED_SIZE = new Dimension(600, 48);
@@ -22,13 +22,13 @@ public interface Constantes {
 	Dimension SALASLISTVIEW_MAXIMUM_SIZE = new Dimension(280, 32767);
 
 	Dimension BOTAO_SALA_PREFERRED_MINIMUM_MAXIMUM_SIZE = new Dimension(270, 60);
-	
+
 	Dimension USUARIOSLISTAVIEW_MINIMUM_SIZE = new Dimension(50, 100);
 	Dimension USUARIOSLISTAVIEW_MAXIMUM_SIZE = new Dimension(50, 32767);
 
 	JLabel LBL_NOT_IMPLEMENTED = new JLabel("Ainda não implementado.");
 
-	Font FONT_NORMAL = new Font(Font.DIALOG,Font.PLAIN, 15);
+	Font FONT_NORMAL = new Font(Font.DIALOG, Font.PLAIN, 15);
 	Font FONT_BIG = new Font(Font.DIALOG, Font.PLAIN, 20);
-		
+
 }

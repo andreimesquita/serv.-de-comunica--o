@@ -4,13 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *     História de usuário sendo implementada HU1C01
+ * História de usuário sendo implementada HU1C01
+ * 
  * @version 1
  * @author Maurício / Ândrei
  */
 public class Usuario {
 	private String nomeUsuario, email, senha, confimacaoSenha;
-	
+
 	public Usuario(String nomeUsuario, String email, String senha) {
 		this.nomeUsuario = nomeUsuario;
 		this.email = email;
@@ -44,12 +45,15 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
+
 	public String getSenha() {
 		return senha;
 	}
+
 	/**
-	 *     Este método retorna as informações do usuário no formato Map<String,String> pronto para ser adicionado ao arquivo Properties.
+	 * Este método retorna as informações do usuário no formato
+	 * Map<String,String> pronto para ser adicionado ao arquivo Properties.
+	 * 
 	 * @return HashMap contendo as informações do usuário.
 	 */
 	public Map<String, String> toHashMap() {
@@ -59,5 +63,5 @@ public class Usuario {
 		map.put("s", getConfimacaoSenha());
 		return map;
 	}
-	
+
 }

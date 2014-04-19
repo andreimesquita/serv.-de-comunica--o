@@ -12,7 +12,7 @@ public class SobreView extends JDialog {
 	private static final String MSG_SOBRE = "<html><body align=center><b>Serviço de Comunicação - codigomestre</b><br/>"
 			+ "Version: Beta 0.1<br/>"
 			+ "(c) Copyright 2014.  Todos os direitos reservados.</body></html>";
-	
+
 	public SobreView(JFrame janela) {
 		super(janela);
 		JLabel lbl = new JLabel(MSG_SOBRE);
@@ -22,15 +22,15 @@ public class SobreView extends JDialog {
 			janela.setEnabled(true);
 			janela.requestFocus();
 		});
-		
+
 		getContentPane().add(BorderLayout.CENTER, lbl);
 		getContentPane().add(BorderLayout.SOUTH, btn);
-		
+
 		pack();
-		
+
 		setLocationRelativeTo(janela);
 		janela.setEnabled(false);
-		
+
 		setVisible(true);
 	}
 }

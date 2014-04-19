@@ -1,6 +1,5 @@
 package com.codigomestre.servidor.ws;
 
-
 import java.io.File;
 import java.util.Properties;
 
@@ -27,5 +26,4 @@ public interface ServidorCliente {
 	public Properties cadastro(
 			@WebParam(name = "properties", partName = "properties") Properties properties);
 
-	
 }

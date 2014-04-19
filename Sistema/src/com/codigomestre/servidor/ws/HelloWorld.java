@@ -20,6 +20,7 @@ public interface HelloWorld {
 	@Action(input = "http://com.codigomestre.servidor.ws/HelloWorld/getHelloWorldMessageRequest", output = "http://com.codigomestre.servidor.ws/HelloWorld/getHelloWorldMessageResponse")
 	public String getHelloWorldMessage(
 			@WebParam(name = "arg0", partName = "arg0") String arg0);
+
 	@WebMethod
 	@WebResult(partName = "return")
 	@Action(input = "http://com.codigomestre.servidor.ws/HelloWorld/getHelloWorldMessageByNameRequest", output = "http://com.codigomestre.servidor.ws/HelloWorld/getHelloWorldMessageByNameResponse")
