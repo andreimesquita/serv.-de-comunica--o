@@ -1,7 +1,6 @@
 package com.codigomestre.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +23,8 @@ public class ServidorSuporteTest {
 	private static final String CODIGO_CADASTRAR = "cu",
 			RETORNO_CADASTRAR_SUCESSO = "scu",
 			RETORNO_CADASTRAR_FRACASSO = "fcu", CODIGO_LOGAR = "l",
-			RETORNO_LOGIN_SUCESSO = "ls", CODIGO_DESLOGAR = "d";
+			RETORNO_LOGIN_SUCESSO = "ls", CODIGO_DESLOGAR = "d",
+			RETORNO_DESLOGAR = "rd";
 
 	private static Socket s;
 	private static Thread socketThread;
@@ -81,7 +81,7 @@ public class ServidorSuporteTest {
 		String st = p.getProperty("codigo");
 		assertEquals(RETORNO_CADASTRAR_SUCESSO, st);
 	}
-	// @TODO Consertar método seguinte
+	
 	@Test
 	public void testFracassoRegistroEmailExistente() throws Exception {
 		Properties pro = new Properties();
@@ -110,7 +110,7 @@ public class ServidorSuporteTest {
 		st = p.getProperty("mensagem");
 		assertNotNull(st);
 	}
-	// @TODO Consertar método seguinte
+
 	@Test
 	public void testFracassoRegistroNomeUsuarioExistente() throws Exception {
 		Properties pro = new Properties();
@@ -169,5 +169,53 @@ public class ServidorSuporteTest {
 	}
 	
 	@Test
-	public void testSucessoDeslogar() throws Exception {}
+	public void testSucessoDeslogar() throws Exception {
+		Properties pro = new Properties();
+
+		Usuario u = new Usuario(DADOS_USUARIO_TEST[NOME],
+				DADOS_USUARIO_TEST[EMAIL], DADOS_USUARIO_TEST[SENHA]);
+
+		pro.put("nu", u.getNomeUsuario());
+		pro.put("e", u.getEmail());
+		pro.put("s", u.getSenha());
+		pro.put("codigo", CODIGO_CADASTRAR);
+
+		objout.flush();
+		objout.writeObject(pro);
+
+		Properties p = (Properties) objin.readObject();
+
+		String st = p.getProperty("codigo");
+		assertEquals(RETORNO_CADASTRAR_SUCESSO, st);
+		
+		pro = new Properties();
+		
+		pro.put("nu", u.getNomeUsuario());
+		pro.put("e", u.getEmail());
+		pro.put("s", u.getSenha());
+		pro.put("codigo", CODIGO_LOGAR);
+		
+		objout.flush();
+		objout.writeObject(pro);
+		
+		p = (Properties) objin.readObject();
+
+		st = p.getProperty("codigo");
+		assertEquals(RETORNO_LOGIN_SUCESSO, st);
+		
+		pro = new Properties();
+		
+		pro.put("nu", u.getNomeUsuario());
+		pro.put("e", u.getEmail());
+		pro.put("s", u.getSenha());
+		pro.put("codigo", CODIGO_DESLOGAR);
+		
+		objout.flush();
+		objout.writeObject(pro);
+		
+		p = (Properties) objin.readObject();
+
+		st = p.getProperty("codigo");
+		assertEquals(RETORNO_DESLOGAR, st);
+	}
 }

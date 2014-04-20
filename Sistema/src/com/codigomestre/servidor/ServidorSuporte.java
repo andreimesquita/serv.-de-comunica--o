@@ -24,7 +24,8 @@ public class ServidorSuporte implements Runnable {
 			CODIGO_CADASTRAR_FRACASSO = "fcu",
 			CODIGO_RETORNAR_LISTA_USUARIOS = "tc", CODIGO_LOGAR = "l",
 			RETORNO_LOGAR_FRACASSO = "fl", 
-			RETORNO_LOGIN_SUCESSO = "ls", CODIGO_DESLOGAR = "d";
+			RETORNO_LOGIN_SUCESSO = "ls", CODIGO_DESLOGAR = "d",
+			RETORNO_DESLOGAR = "rd";
 
 	public ServidorSuporte(Socket clienteAtual) {
 		this.cliente = clienteAtual;
@@ -104,7 +105,16 @@ public class ServidorSuporte implements Runnable {
 					break;
 					// DESLOGAR
 				case CODIGO_DESLOGAR:
+					Usuario us = new Usuario(pro.getProperty("nu"),
+							pro.getProperty("e"), pro.getProperty("s"));
+					if (uDAO.isOnline(us)) {
+						uDAO.deslogar(us);
+						proRespostas.put("codigo", RETORNO_DESLOGAR);
+					} else {
+						// O usuário não está online
+					}
 					
+					obo.writeObject(proRespostas);
 					break;
 					// RESET
 				case "reset":

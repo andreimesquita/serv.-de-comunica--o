@@ -13,7 +13,7 @@ import com.codigomestre.servidor.exception.LoginSenhaIncorretaException;
 public class UsuarioDAOTest {
 
 	private static UsuarioDAO dao;
-
+	
 	@Before
 	public void setUp() throws Exception {
 		if (dao == null) {
@@ -80,12 +80,22 @@ public class UsuarioDAOTest {
 	
 	@Test
 	public void testDeslogar() throws Exception {
-		fail("Ainda não implementado.");
+		Usuario usuario = new Usuario("nome", "email", "senha");
+		dao.cadastrar(usuario);
+		dao.logar(usuario);
+		assertTrue(dao.isOnline(usuario));
+		dao.deslogar(usuario);
+		assertFalse(dao.isOnline(usuario));
 	}
 	
 	@Test
 	public void testGetAll() throws Exception {
+		Usuario[] us = {new Usuario("1", "2", "3"),new Usuario("2", "3", "4"),new Usuario("3", "4", "5")};
+		for (Usuario u : us) {
+			dao.cadastrar(u);
+		}
 		
+		assertEquals(us.length, dao.getAll().size());
 	}
 	
 }

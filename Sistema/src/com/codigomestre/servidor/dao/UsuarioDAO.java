@@ -39,11 +39,17 @@ public class UsuarioDAO {
 	 */
 	private static final String SQL_ONLINE_POR_EMAIL = "select online from usuarios where email = ?";
 	/**
-	 * Muda o estado do usuário para online através do email e senha do mesmo.
+	 * Muda o estado do usuário para <b>online</b> através do email e senha do mesmo.
 	 * <b>SQL:</b>
 	 * <i>"update usuarios set online = true where email = ? AND senha = ?"</i>
 	 */
 	private static final String SQL_SET_ONLINE = "update usuarios set online = true where email = ? AND senha = ?";
+	/**
+	 * Muda o estado do usuário para <b>offline</b> através do email e senha do mesmo.
+	 * <b>SQL:</b>
+	 * <i>"update usuarios set online = false where email = ? AND senha = ?"</i>
+	 */
+	private static final String SQL_SET_OFFLINE = "update usuarios set online = false where email = ? AND senha = ?";
 	/**
 	 * Retorna um usuário buscando por email e senha. <b>SQL:</b>
 	 * <i>"SELECT * FROM usuarios WHERE email = ? AND senha = ?"</i>
@@ -130,7 +136,7 @@ public class UsuarioDAO {
 	 * @throws SQLException
 	 *             A SQL não está correta.
 	 */
-	public void cadastrar(Usuario u)
+	public synchronized void cadastrar(Usuario u)
 			throws ErroCadastroEmailDuplicadoException,
 			ErroCadastroNomeDuplicadoException, ErroDeConexaoException,
 			SQLException {
@@ -291,7 +297,13 @@ public class UsuarioDAO {
 		objprep.setString(2, u.getSenha());
 		objprep.executeUpdate();
 	}
-
+	
+	public void deslogar(Usuario u) throws SQLException, ErroDeConexaoException {
+		PreparedStatement objprep = conexao.getRetornarEstadoDePreparo(SQL_SET_OFFLINE);
+		objprep.setString(1, u.getEmail());
+		objprep.setString(2, u.getSenha());
+		objprep.executeUpdate();
+	}
 	/**
 	 * Executa o comando <i>truncate</i> na tabela <b>usuarios</b> apagando
 	 * todos os seus dados. Este método pode ser executado pelo cliente com o
@@ -302,7 +314,7 @@ public class UsuarioDAO {
 	 * @throws ErroDeConexaoException
 	 *             A conexão com o banco de dados não está disponível.
 	 */
-	public void reset() throws SQLException, ErroDeConexaoException {
+	public synchronized void reset() throws SQLException, ErroDeConexaoException {
 		PreparedStatement objprep = conexao
 				.getRetornarEstadoDePreparo("truncate table usuarios");
 		objprep.executeUpdate();
