@@ -1,7 +1,6 @@
 package com.codigomestre.model;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -78,4 +77,15 @@ public class UsuarioDAOTest {
 		Usuario usuarioSenhaIncorreta = new Usuario("nome", "email", "senha2");
 		dao.logar(usuarioSenhaIncorreta);
 	}
+	
+	@Test
+	public void testDeslogar() throws Exception {
+		fail("Ainda não implementado.");
+	}
+	
+	@Test
+	public void testGetAll() throws Exception {
+		
+	}
+	
 }
