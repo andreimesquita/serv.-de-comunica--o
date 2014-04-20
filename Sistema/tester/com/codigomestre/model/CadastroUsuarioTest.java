@@ -8,12 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.codigomestre.model.pojo.Usuario;
-import com.codigomestre.servidor.Conexao;
-import com.codigomestre.servidor.UsuarioDAO;
+import com.codigomestre.servidor.dao.Conexao;
+import com.codigomestre.servidor.dao.UsuarioDAO;
 
 /**
  * História de usuário sendo implementada HU1C01
- * 
+ * @deprecated Estes testes estão na classe UsuarioDAOTest.
  * @version 1
  * @author Maurício
  */

@@ -12,7 +12,7 @@ import com.codigomestre.model.pojo.Usuario;
 
 /**
  * Version 1 HU2C01 HU2C02 HU2C03 Version 2 HU6C01 HU6C02
- * 
+ * @deprecated
  * @version 2
  * @author Ândrei
  */

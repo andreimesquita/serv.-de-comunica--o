@@ -1,5 +1,8 @@
 package com.codigomestre.model;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -7,14 +10,13 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Properties;
 
-import junit.framework.TestCase;
-
+import org.junit.Before;
 import org.junit.Test;
 
 import com.codigomestre.model.pojo.Usuario;
 import com.codigomestre.servidor.Servidor;
 
-public class ServidorTest extends TestCase {
+public class ServidorSuporteTest {
 
 	private static final String[] DADOS_USUARIO_TEST = { "nome", "email",
 			"senha" };
@@ -30,8 +32,8 @@ public class ServidorTest extends TestCase {
 	private static ObjectOutputStream objout;
 	private static ObjectInputStream objin;
 
-	@Override
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		if (socketThread == null) {
 			socketThread = new Thread(new Servidor());
 			socketThread.start();

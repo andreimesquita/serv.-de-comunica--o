@@ -1,17 +1,33 @@
-Valores assinalados com * são apenas representações daquilo que deve ser retornado no arquivo XML.
-
 Cliente p/ Servidor
 	Cadastrar usuário
 		codigo: cu
 		UsuarioPOJO*
-
+	Logar
+		codigo: l
+	Deslogar
+		codigo: d
+		
 Servidor p/ Cliente
 	Cadastrar usuário
-			Sucesso
-				codigo: scu
-				UsuárioPOJO*
-			Fracasso
-				E-mail duplicado
-					
-				Usuário duplicado
-					
+		Sucesso
+			codigo: scu
+			nu: nomeUsuario
+			e: email
+			s: senha
+		Fracasso
+			codigo: fcu
+			E-mail duplicado
+				
+			Usuário duplicado
+				
+	Logar
+		Sucesso
+			codigo: scu
+			nu: nomeUsuario*
+			e: email
+			s: senha
+		Fracasso
+			
+	Deslogar
+		Sucesso
+			

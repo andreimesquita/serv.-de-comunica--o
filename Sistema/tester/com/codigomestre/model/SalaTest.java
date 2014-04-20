@@ -11,7 +11,7 @@ import com.codigomestre.model.pojo.Sala;
 
 /**
  * HU3C01 Version 1
- * 
+ * @deprecated
  * @author Ândrei
  */
 public class SalaTest extends TestCase {

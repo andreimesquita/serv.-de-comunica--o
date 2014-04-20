@@ -1,4 +1,4 @@
-package com.codigomestre.servidor;
+package com.codigomestre.servidor.dao;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

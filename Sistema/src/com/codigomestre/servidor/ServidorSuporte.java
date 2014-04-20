@@ -10,6 +10,7 @@ import com.codigomestre.model.ErroCadastroEmailDuplicadoException;
 import com.codigomestre.model.ErroCadastroNomeDuplicadoException;
 import com.codigomestre.model.ErroDeConexaoException;
 import com.codigomestre.model.pojo.Usuario;
+import com.codigomestre.servidor.dao.UsuarioDAO;
 
 public class ServidorSuporte implements Runnable {
 

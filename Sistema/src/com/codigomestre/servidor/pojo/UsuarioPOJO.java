@@ -1,4 +1,4 @@
-package com.codigomestre.servidor;
+package com.codigomestre.servidor.pojo;
 
 public class UsuarioPOJO {
 

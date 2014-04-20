@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.codigomestre.model.pojo.Usuario;
-import com.codigomestre.servidor.Conexao;
+import com.codigomestre.servidor.dao.Conexao;
 import com.mysql.jdbc.PreparedStatement;
 
 /**

@@ -1,4 +1,4 @@
-package com.codigomestre.servidor;
+package com.codigomestre.servidor.view;
 
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
@@ -17,7 +17,7 @@ public class ServidorView {
 	SystemTray st;
 
 	public ServidorView() {
-		File arq = new File("E:\\kraicon.jpg");
+		File arq = new File("Imagem/kraicon.jpg");
 		BufferedImage jpg = null;
 
 		try {
