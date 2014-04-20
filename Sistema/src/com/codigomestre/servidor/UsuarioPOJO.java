@@ -2,13 +2,22 @@ package com.codigomestre.servidor;
 
 public class UsuarioPOJO {
 
-	private String nomeUsuario, email;
+	private String nomeUsuario, email, senha;
 
-	public UsuarioPOJO(String nomeUsuario, String email) {
+	public UsuarioPOJO(String nomeUsuario, String email, String senha) {
 		this.nomeUsuario = nomeUsuario;
 		this.email = email;
+		this.senha = senha;
 	}
 
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}

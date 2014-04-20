@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.codigomestre.model.pojo.Usuario;
+import com.codigomestre.servidor.Conexao;
+import com.codigomestre.servidor.UsuarioDAO;
 
 /**
  * História de usuário sendo implementada HU1C01

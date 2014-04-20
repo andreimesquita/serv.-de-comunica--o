@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 public class SobreView extends JDialog {
 
 	private static final String MSG_SOBRE = "<html><body align=center><b>Serviço de Comunicação - codigomestre</b><br/>"
-			+ "Version: Beta 0.1<br/>"
+			+ "Version: 2.0<br/>"
 			+ "(c) Copyright 2014.  Todos os direitos reservados.</body></html>";
 
 	public SobreView(JFrame janela) {

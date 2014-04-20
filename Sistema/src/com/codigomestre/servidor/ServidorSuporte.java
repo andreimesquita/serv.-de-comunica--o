@@ -3,25 +3,37 @@ package com.codigomestre.servidor;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.Properties;
 
-import com.codigomestre.model.pojo.Sala;
+import com.codigomestre.model.ErroCadastroEmailDuplicadoException;
+import com.codigomestre.model.ErroCadastroNomeDuplicadoException;
+import com.codigomestre.model.ErroDeConexaoException;
+import com.codigomestre.model.pojo.Usuario;
 
 public class ServidorSuporte implements Runnable {
 
 	private Socket cliente;
-	private List<Sala> lista;
-	private List<UsuarioPOJO> usuarios = new ArrayList<>();
+	private static UsuarioDAO uDAO;
 
+	private Properties proRespostas = new Properties();
+	
 	private static final String CODIGO_CADASTRAR = "cu",
 			CODIGO_CADASTRAR_SUCESSO = "scu",
-			CODIGO_CADASTRAR_FRACASSO = "fcu", MENSAGEM_EMAIL_DUPLICADO = "ed",
-			MENSAGEM_USUARIO_DUPLICADO = "ud";
+			CODIGO_CADASTRAR_FRACASSO = "fcu",
+			CODIGO_RETORNAR_LISTA_USUARIOS = "tc", CODIGO_LOGAR = "l",
+			RETORNO_LOGAR_FRACASSO = "fl", 
+			RETORNO_LOGIN_SUCESSO = "ls", CODIGO_DESLOGAR = "d";
 
 	public ServidorSuporte(Socket clienteAtual) {
 		this.cliente = clienteAtual;
+		try {
+			uDAO = new UsuarioDAO();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ErroDeConexaoException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -31,54 +43,76 @@ public class ServidorSuporte implements Runnable {
 					cliente.getOutputStream());
 			ObjectInputStream obi = new ObjectInputStream(
 					cliente.getInputStream());
+			Properties pro;
 			while (true) {
-				Properties proRespostas = new Properties();
-				Properties pro = (Properties) obi.readObject();
+				proRespostas = new Properties();
 
+				pro = (Properties) obi.readObject();
+				
 				String s = pro.getProperty("codigo");
 				switch (s) {
+				// CADASTRO
 				case CODIGO_CADASTRAR:
-					String nomeUsuario = pro.getProperty("nu"),
-					email = pro.getProperty("e");
-
+					Usuario usuario = new Usuario(pro.getProperty("nu"),
+							pro.getProperty("e"), pro.getProperty("s"));
+					
 					boolean sucesso = true;
 
-					for (UsuarioPOJO pojo : usuarios) {
-						if (pojo.getEmail().equals(email)) {
-							sucesso = false;
-							proRespostas.put("mensagem",
-									MENSAGEM_EMAIL_DUPLICADO);
-							break;
-						} else if (pojo.getNomeUsuario().equals(nomeUsuario)) {
-							sucesso = false;
-							proRespostas.put("mensagem",
-									MENSAGEM_USUARIO_DUPLICADO);
-							break;
-						}
+					try {
+						uDAO.cadastrar(usuario);
+					} catch (ErroCadastroNomeDuplicadoException ecnde) {
+						sucesso = false;
+						proRespostas.put("mensagem", ecnde.getMessage());
+					} catch (ErroCadastroEmailDuplicadoException ecede) {
+						sucesso = false;
+						proRespostas.put("mensagem", ecede.getMessage());
 					}
 
 					if (sucesso) {
-						usuarios.add(new UsuarioPOJO(nomeUsuario, email));
 						proRespostas.put("codigo", CODIGO_CADASTRAR_SUCESSO);
 					} else {
 						proRespostas.put("codigo", CODIGO_CADASTRAR_FRACASSO);
 					}
 
 					obo.writeObject(proRespostas);
-					continue;
-				case "tc":
+					break;
+					// RETORNAR LISTA DE USUÁRIO
+				case CODIGO_RETORNAR_LISTA_USUARIOS:
 					proRespostas.put("codigo", "rtc");
-
 					obo.writeObject(proRespostas);
-					continue;
+					break;
+					// LOGIN
+				case CODIGO_LOGAR:
+					Usuario u = new Usuario(pro.getProperty("nu"),
+							pro.getProperty("e"), pro.getProperty("s"));
+					
+					try  {
+						if (uDAO.isOnline(u)) {
+							proRespostas.put("codigo", RETORNO_LOGAR_FRACASSO);
+							proRespostas.put("mensagem", "O usuário já está online.");
+						} else {
+							uDAO.logar(u);
+							// @TODO revisar linha sweguinte - Retornar info sobre o usuário e dos demais usuários.
+							proRespostas.put("codigo", RETORNO_LOGIN_SUCESSO);
+						}
+					} catch (SQLException | ErroDeConexaoException as) {
+						System.out.println(as.getMessage());
+					}
+						
+					obo.writeObject(proRespostas);
+					break;
+					// DESLOGAR
+				case CODIGO_DESLOGAR:
+					
+					break;
+					// RESET
 				case "reset":
-					usuarios = new ArrayList<>();
-					continue;
+					uDAO.reset();
+					break;
 				}
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 
 	}

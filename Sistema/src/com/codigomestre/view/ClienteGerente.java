@@ -123,7 +123,7 @@ public class ClienteGerente {
 	private void iniciar() {
 
 		try {
-			javax.swing.UIManager.setLookAndFeel(Salvar.get("lookandfeel"));
+		javax.swing.UIManager.setLookAndFeel(Salvar.get("lookandfeel"));
 		} catch (Exception e3) {
 			JOptionPane
 					.showConfirmDialog(
