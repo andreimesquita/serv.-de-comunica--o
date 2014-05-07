@@ -52,9 +52,10 @@ public class SalasAbasView extends JTabbedPane {
 	}
 
 	public void adicionarSala(JPanel sala, String nome) {
-		addTab(nome, sala);
+		addTab(nome, null, sala, "Tooltip");
 		abas.add(new SalaABA(nome));
 		setSelectedComponent(getComponent(abas.size() - 1));
+		setTabComponentAt(abas.size() - 1, new ButtonTabComponent(this));
 	}
 
 	public boolean isNaSala(String string) {

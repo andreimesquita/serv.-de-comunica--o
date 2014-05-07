@@ -303,8 +303,8 @@ public class ClienteGerente {
 		public MeuAction(String valor) {
 			this.valor = valor;
 		}
-
 		@Override
+		
 		public void actionPerformed(ActionEvent arg0) {
 			Salvar.gravar("lookandfeel", valor);
 			reiniciarGui();
