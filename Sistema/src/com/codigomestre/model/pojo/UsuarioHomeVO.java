@@ -17,7 +17,8 @@ public class UsuarioHomeVO {
 	}
 
 	public Image getImg() {
-		return img.getScaledInstance(160, 160, 1);
+		int altura = 160, largura = (int) (altura * 0.9000);
+		return img.getScaledInstance(largura, altura, 1);
 	}
 
 	public String getNome() {

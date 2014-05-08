@@ -65,7 +65,6 @@ public class ClienteGerente {
 		switch (Salvar.get("lookandfeel")) {
 		case ("com.jtattoo.plaf.acryl.AcrylLookAndFeel"):
 			btnMenuEditarLookAndFeelAcryl.setSelected(true);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
@@ -73,7 +72,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			break;
 		case ("com.jtattoo.plaf.aero.AeroLookAndFeel"):
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
@@ -84,7 +82,6 @@ public class ClienteGerente {
 		case ("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel"):
 			btnMenuEditarLookAndFeelBernstein.setSelected(true);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
@@ -94,7 +91,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelHiFi.setSelected(true);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
@@ -103,7 +99,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(true);
@@ -111,7 +106,6 @@ public class ClienteGerente {
 		case ("com.jtattoo.plaf.smart.SmartLookAndFeel"):
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);

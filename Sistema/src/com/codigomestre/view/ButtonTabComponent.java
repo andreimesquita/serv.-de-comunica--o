@@ -29,7 +29,7 @@ public class ButtonTabComponent extends JPanel {
     //CONSTRUTOR
    //
    //Início...
-   public ButtonTabComponent(final JTabbedPane pane) {
+   public ButtonTabComponent() {
        //unset default FlowLayout' gaps
        super(new FlowLayout(FlowLayout.LEFT, 0, 0));
        if (pane == null) {

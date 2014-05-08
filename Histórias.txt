@@ -51,6 +51,7 @@ HU1. Como usuário eu devo poder me cadastrar no sistema (5)
 	Término do HUXC05
 
 (OK) HU2. Como usuário eu devo poder entrar e sair de salas de bate-papo (4)
+
 	(OK) HU2C01 Cenário normal de sucesso ao entrar em uma sala
 		 O usuário seleciona o nome da sala em que quer entrar, no menu lateral
 			 nome da sala
@@ -87,7 +88,7 @@ HU3. Como usuário eu devo poder enviar mensagens na sala (3)
 		O sistema permanece na mesma tela
 	Término do HU3C02
 
-HU4. Como usuário eu devo poder enviar mensagens privadas para outros usuários (1)
+HU4. Como usuário eu devo poder enviar mensagens privadas para outros usuários (1) - PENDENTE
 
 	HU4C01. Cenário normal de sucesso quando ambos os usuários estão em uma sala
 		O usuário entra em uma sala de bate-papo
@@ -99,7 +100,7 @@ HU4. Como usuário eu devo poder enviar mensagens privadas para outros usuários
 		("andreirs: Oi!")
 	Término do HU4C01
 
-HU5. Como usuário eu devo poder visualizar as informações de perfil dos demais usuários (1)
+HU5. Como usuário eu devo poder visualizar as informações de perfil dos demais usuários (1) - PENDENTE
 
 	HU5C01. Cenário comum de sucesso
 		O usuário a
@@ -141,19 +142,14 @@ HU7. Como usuário eu devo poder me logar no sistema
 	HU7C03. Cenário de fracasso para senha errada
 	Término do HU7C03
 	
-HU8. Como usuário eu devo poder visualizar as informações no meu perfil*
-HU9. Como usuário devo poder visualizar o status online de outros usuários*
+HU8. Como usuário eu devo poder visualizar as informações no meu perfil* - PENDENTE
+HU9. Como usuário devo poder visualizar o status online de outros usuários
 
 	|ADMINISTRADOR|
 
-<<<<<<< HEAD
 (OK) HU10. O administrador pode ativar e desativar o servidor
 
 	(OK) HU10C01. Cenário comum de sucesso de ativação do servidor
-=======
-(OK) HU9. O administrador pode ativar e desativar o servidor
-
-	(OK) HU9C01. Cenário comum de sucesso de ativação do servidor
 >>>>>>> 454f15b7e3954302d9aba45d6efb4e9f092fbeea
 		O administrador seleciona com o botão direito do mouse em cima do ícone 
 			na barra de tarefas

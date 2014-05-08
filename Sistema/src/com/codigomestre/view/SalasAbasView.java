@@ -1,6 +1,5 @@
 package com.codigomestre.view;
 
-import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +53,8 @@ public class SalasAbasView extends JTabbedPane {
 	public void adicionarSala(JPanel sala, String nome) {
 		addTab(nome, null, sala, "Tooltip");
 		abas.add(new SalaABA(nome));
-		setSelectedComponent(getComponent(abas.size() - 1));
-		setTabComponentAt(abas.size() - 1, new ButtonTabComponent(this));
+		// setTabComponentAt(abas.size() - 1, new SalaChatView(nome));
+		// setSelectedComponent(getComponent(abas.size() - 1));
 	}
 
 	public boolean isNaSala(String string) {
