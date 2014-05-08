@@ -13,6 +13,13 @@ import com.codigomestre.model.UsuarioJaEstaNaSalaException;
  * @version 1
  * @author Ândrei
  */
+
+//	#34	Adicionar prefixo synchronized em métodos da classe Sala 
+//	Adicionar nos métodos 
+//	entrar(), 
+//	remover() e 
+//	escrever().
+// este prefixo evita que duas theads(Usuarios) executem ao mesmo tempo.
 public class Sala {
 
 	private List<Usuario> lista = new ArrayList<>();
@@ -26,7 +33,7 @@ public class Sala {
 		return false;
 	}
 
-	public void entrar(Usuario u) throws UsuarioJaEstaNaSalaException {
+	public synchronized void Entrar(Usuario u) throws UsuarioJaEstaNaSalaException {
 		for (Usuario usuario : lista) {
 			if (usuario.getNomeUsuario().equals(u.getNomeUsuario()))
 				throw new UsuarioJaEstaNaSalaException(
@@ -39,7 +46,7 @@ public class Sala {
 		lista.clear();
 	}
 
-	public void remover(Usuario u) {
+	public synchronized void Remover(Usuario u) {
 		for (Usuario usuario : lista) {
 			if (usuario.getNomeUsuario().equals(u.getNomeUsuario())) {
 				lista.remove(usuario);
@@ -48,7 +55,7 @@ public class Sala {
 		}
 	}
 
-	public static void escrever(String nome, String mensagem) {
+	public static synchronized void Escrever(String nome, String mensagem) {
 		Calendar c = Calendar.getInstance();
 		Date data = c.getTime();
 		Sala.ultimaMensagem = nome + " [" + data.getHours() + "h:"
