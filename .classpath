@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Sistema/src"/>
+	<classpathentry kind="src" path="Sistema/tester"/>
+	<classpathentry kind="lib" path="Sistema/lib/DJNativeSwing-SWT.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/DJNativeSwing-SWTAPI.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/DJNativeSwing-SWTCore.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/DJNativeSwing-SWTDemo.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/DJNativeSwing.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/jna_WindowUtils.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/JTattoo-1.6.10.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/jxbrowser-4.3.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/jxbrowser-win-4.3.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/MozillaInterfaces-1.8.1.3.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/swingx-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/swt.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/ws/xmlpull-1.1.3.1.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/ws/xpp3_min-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="Sistema/lib/ws/xstream-1.4.7.jar"/>
+	<classpathentry kind="lib" path="Sistema/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
