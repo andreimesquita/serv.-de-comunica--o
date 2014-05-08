@@ -28,7 +28,7 @@ public class SalasAbasView extends JTabbedPane {
 
 		setFocusable(false);
 
-		CriarDemo();
+		CriarHome();
 	}
 
 	public void removerSala(String string) {
@@ -42,7 +42,7 @@ public class SalasAbasView extends JTabbedPane {
 		}
 	}
 
-	public void CriarDemo() {
+	public void CriarHome() {
 		JWebBrowser browser = new JWebBrowser(
 				JWebBrowser.destroyOnFinalization());
 		browser.navigate("http://codigomestre.forumbrasil.net/");
