@@ -3,7 +3,7 @@ package com.codigomestre.action;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.codigomestre.view.InicialView;
+import com.codigomestre.cliente.view.InicialView;
 
 public class ToRegisterViewAction implements ActionListener {
 

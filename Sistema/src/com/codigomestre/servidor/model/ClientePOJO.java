@@ -2,6 +2,14 @@ package com.codigomestre.servidor.model;
 
 public class ClientePOJO {
 
-	private String Nome;
+	private String nome;
+	
+	public ClientePOJO(String nome) {
+		this.nome = nome;
+	}
 
+	public String getNome() {
+		return nome;
+	}
+	
 }
