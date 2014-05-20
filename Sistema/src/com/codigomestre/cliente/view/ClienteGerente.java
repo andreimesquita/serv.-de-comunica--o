@@ -1,4 +1,4 @@
-package com.codigomestre.view;
+package com.codigomestre.cliente.view;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -65,7 +65,6 @@ public class ClienteGerente {
 		switch (Salvar.get("lookandfeel")) {
 		case ("com.jtattoo.plaf.acryl.AcrylLookAndFeel"):
 			btnMenuEditarLookAndFeelAcryl.setSelected(true);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
@@ -73,7 +72,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			break;
 		case ("com.jtattoo.plaf.aero.AeroLookAndFeel"):
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
@@ -84,7 +82,6 @@ public class ClienteGerente {
 		case ("com.jtattoo.plaf.bernstein.BernsteinLookAndFeel"):
 			btnMenuEditarLookAndFeelBernstein.setSelected(true);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
@@ -94,7 +91,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelHiFi.setSelected(true);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
@@ -102,7 +98,6 @@ public class ClienteGerente {
 		case ("com.jtattoo.plaf.mcwin.McWinLookAndFeel"):
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
@@ -112,7 +107,6 @@ public class ClienteGerente {
 			btnMenuEditarLookAndFeelHiFi.setSelected(false);
 			btnMenuEditarLookAndFeelBernstein.setSelected(false);
 			btnMenuEditarLookAndFeelAcryl.setSelected(false);
-			btnMenuEditarLookAndFeelAcryl.setSelected(false);
 			btnMenuEditarLookAndFeelMcWin.setSelected(false);
 			btnMenuEditarLookAndFeelAero.setSelected(false);
 			btnMenuEditarLookAndFeelSmart.setSelected(true);
@@ -120,7 +114,7 @@ public class ClienteGerente {
 		}
 	}
 
-	private void iniciar() {
+	protected void iniciar() {
 
 		try {
 		javax.swing.UIManager.setLookAndFeel(Salvar.get("lookandfeel"));
@@ -280,20 +274,6 @@ public class ClienteGerente {
 		// card.addLayoutComponent(principalLogin, "login");
 		janela.setLocationRelativeTo(null);
 		janela.setVisible(true);
-	}
-
-	public static void main(String[] args) {
-		NativeInterface.open();
-
-		SwingUtilities.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				ClienteGerente cg = new ClienteGerente();
-				cg.iniciar();
-			}
-		});
-
-		NativeInterface.runEventPump();
 	}
 
 	private class MeuAction extends AbstractAction {
